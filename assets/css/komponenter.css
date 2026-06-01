@@ -1,0 +1,526 @@
+/* KNAPPER */
+
+.knap,
+.infomode-link,
+.infomoede-knap,
+.rejsebreve-knap,
+.tryghed-knap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 2.8rem;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--farve-orange);
+    color: var(--farve-hvid);
+    font-size: var(--tekst-lille);
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.knap-orange,
+.infomoede-knap,
+.rejsebreve-knap,
+.tryghed-knap {
+    background-color: var(--farve-orange);
+    color: var(--farve-hvid);
+}
+
+.knap-groen {
+    background-color: var(--farve-groen);
+    color: var(--farve-hvid);
+}
+
+.infomode-link {
+    border: 1px solid rgba(34, 34, 34, 0.25);
+    background-color: var(--farve-hvid);
+    color: var(--farve-moerk);
+}
+
+.infomode-ikon {
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
+
+/* OPHOLDSKORT */
+
+.ophold-kort {
+    --indhak: 2rem;
+    --indhak-halv: calc(var(--indhak) / 2);
+    --indhak-mobil: 65%;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 8.5rem;
+    grid-template-areas:
+        "billede billede"
+        "indhold indhold"
+        "info handlinger";
+    border-radius: var(--radius);
+    background-color: var(--farve-hvid);
+}
+
+.ophold-kort::before,
+.ophold-kort::after {
+    content: "";
+    position: absolute;
+    top: var(--indhak-mobil);
+    z-index: 5;
+    width: var(--indhak);
+    height: var(--indhak);
+    border-radius: 50%;
+    background-color: var(--farve-baggrund);
+    transform: translateY(-50%);
+}
+
+.ophold-kort::before {
+    left: calc(var(--indhak-halv) * -1);
+}
+
+.ophold-kort::after {
+    right: calc(var(--indhak-halv) * -1);
+}
+
+.ophold-kort-billede-wrapper {
+    grid-area: billede;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.ophold-kort-billede {
+    display: block;
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ophold-kort-label {
+    position: absolute;
+    top: var(--afstand-s);
+    left: var(--afstand-s);
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius);
+    background-color: var(--farve-orange);
+    color: var(--farve-hvid);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.ophold-kort-indhold {
+    grid-area: indhold;
+    padding: var(--afstand-m) var(--afstand-m) 0;
+}
+
+.ophold-kort-titel {
+    color: var(--farve-moerk);
+    font-family: var(--font-overskrift);
+    font-size: var(--tekst-mellem, 1.5rem);
+    line-height: 1.12;
+}
+
+.ophold-kort-beskrivelse,
+.ophold-kort-varighed {
+    display: none;
+}
+
+.ophold-kort-info,
+.ophold-kort-handlinger {
+    margin-block: var(--afstand-m);
+    padding-top: var(--afstand-s);
+    border-top: var(--streg);
+}
+
+.ophold-kort-info {
+    grid-area: info;
+    display: grid;
+    gap: 0.7rem;
+    margin-left: var(--afstand-m);
+}
+
+.ophold-kort-handlinger {
+    grid-area: handlinger;
+    display: grid;
+    align-content: start;
+    gap: var(--afstand-xs);
+    margin-right: var(--afstand-m);
+}
+
+.ophold-kort-info-label,
+.ophold-kort-status,
+.ophold-kort-info-tekst {
+    font-size: 0.72rem;
+    line-height: 1.2;
+}
+
+.ophold-kort-info-label {
+    font-weight: 700;
+}
+
+.ophold-kort-status,
+.ophold-kort-info-tekst {
+    margin-top: 0.1rem;
+    font-weight: 500;
+}
+
+.ophold-kort-status {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.status-prik {
+    flex: 0 0 auto;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background-color: var(--farve-groen);
+}
+
+.ophold-kort-handlinger .knap,
+.ophold-kort-handlinger .infomode-link {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.65rem 0.7rem;
+    font-size: 0.72rem;
+}
+
+
+/* REJSEINSPIRATION */
+
+.rejseinspiration {
+    width: 100%;
+}
+
+.rejseinspiration-liste {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--afstand-m);
+    overflow-x: auto;
+    padding-bottom: var(--afstand-s);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.rejseinspiration-liste::-webkit-scrollbar {
+    display: none;
+}
+
+.rejseinspiration-kort {
+    position: relative;
+    display: block;
+    flex: 0 0 min(23rem, 70vw);
+    height: 30rem;
+    overflow: hidden;
+    border-radius: var(--radius);
+    scroll-snap-align: center;
+    background-color: var(--farve-moerk);
+    color: var(--farve-hvid);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rejseinspiration-kort::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(34, 34, 34, 0.08),
+            rgba(34, 34, 34, 0.28),
+            rgba(34, 34, 34, 0.75));
+}
+
+.rejseinspiration-kort:focus-visible {
+    outline: 0.2rem solid var(--farve-orange);
+    outline-offset: 0.3rem;
+}
+
+.rejseinspiration-billede {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.rejseinspiration-badges {
+    position: absolute;
+    top: var(--afstand-s);
+    left: var(--afstand-s);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--afstand-xs);
+}
+
+.rejseinspiration-badge {
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--farve-orange);
+    color: var(--farve-hvid);
+    font-family: var(--font-broedtekst);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.rejseinspiration-tekst {
+    position: absolute;
+    right: var(--afstand-l);
+    bottom: 2.3rem;
+    left: 1.2rem;
+    z-index: 2;
+}
+
+.rejseinspiration-tekst h3 {
+    color: var(--farve-hvid);
+    font-family: var(--font-overskrift);
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.rejseinspiration-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: var(--afstand-xs);
+    color: var(--farve-hvid);
+    font-family: var(--font-broedtekst);
+    font-size: 1.35rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.rejseinspiration-link::after {
+    content: "→";
+    transition: transform 0.1s ease;
+}
+
+.rejseinspiration-prikker {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: var(--afstand-s);
+}
+
+.rejseinspiration-prikker button {
+    width: 0.7rem;
+    height: 0.7rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(34, 34, 34, 0.25);
+    cursor: pointer;
+}
+
+.rejseinspiration-prikker button.aktiv {
+    background-color: var(--farve-moerk);
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+    .knap:hover,
+    .infomoede-knap:hover,
+    .rejsebreve-knap:hover,
+    .tryghed-knap:hover {
+        transform: translateY(-0.18rem);
+        box-shadow: 0 0.7rem 1.4rem rgba(0, 0, 0, 0.18);
+    }
+
+    .knap-orange:hover,
+    .infomoede-knap:hover,
+    .rejsebreve-knap:hover,
+    .tryghed-knap:hover {
+        background-color: var(--farve-hvid);
+        color: var(--farve-orange);
+    }
+
+    .knap-groen:hover {
+        background-color: var(--farve-hvid);
+        color: var(--farve-groen);
+    }
+
+    .knap-hvid:hover {
+        background-color: var(--farve-moerk);
+        color: var(--farve-hvid);
+    }
+
+    .knap-hvid:hover .infomode-ikon {
+        filter: brightness(0) invert(1);
+    }
+
+    .ophold-kort {
+        --ophold-info-bredde: 15rem;
+        --ophold-kort-hojde: 18rem;
+
+        grid-template-columns: 17rem minmax(0, 1fr) var(--ophold-info-bredde);
+        grid-template-rows: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "billede indhold info"
+            "billede handlinger info";
+        height: var(--ophold-kort-hojde);
+        max-height: var(--ophold-kort-hojde);
+    }
+
+    .ophold-kort>* {
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .ophold-kort::before,
+    .ophold-kort::after {
+        right: calc(var(--ophold-info-bredde) - var(--indhak-halv));
+        left: auto;
+        transform: none;
+    }
+
+    .ophold-kort::before {
+        top: calc(var(--indhak-halv) * -1);
+    }
+
+    .ophold-kort::after {
+        top: auto;
+        bottom: calc(var(--indhak-halv) * -1);
+    }
+
+    .ophold-kort-billede-wrapper {
+        height: 100%;
+        max-height: var(--ophold-kort-hojde);
+        border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    .ophold-kort-billede {
+        height: 100%;
+        max-height: var(--ophold-kort-hojde);
+    }
+
+    .ophold-kort-indhold {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--afstand-m) var(--afstand-m) 0;
+    }
+
+    .ophold-kort-titel {
+        max-width: 36rem;
+        font-size: 1.55rem;
+    }
+
+    .ophold-kort-beskrivelse,
+    .ophold-kort-varighed {
+        display: block;
+    }
+
+    .ophold-kort-beskrivelse {
+        margin-top: var(--afstand-s);
+        margin-bottom: var(--afstand-m);
+        font-size: 0.85rem;
+        line-height: 1.45;
+    }
+
+    .ophold-kort-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--afstand-s);
+        margin: 0;
+        padding: var(--afstand-m);
+        border-top: 0;
+        border-left: var(--streg);
+    }
+
+    .ophold-kort-handlinger {
+        display: flex;
+        align-items: center;
+        gap: var(--afstand-s);
+        margin: 0;
+        padding: 0 var(--afstand-m) var(--afstand-m);
+        border-top: 0;
+    }
+
+    .ophold-kort-handlinger .knap,
+    .ophold-kort-handlinger .infomode-link {
+        width: auto;
+        min-height: 2.8rem;
+        padding: 0.75rem 1.25rem;
+        font-size: var(--tekst-lille);
+    }
+
+    .ophold-kort-info-label,
+    .ophold-kort-status,
+    .ophold-kort-info-tekst {
+        font-size: 0.82rem;
+    }
+
+    .rejseinspiration-liste {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--afstand-m);
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    .rejseinspiration-kort {
+        flex: initial;
+        min-width: 0;
+        height: 18rem;
+        border-radius: 0.7rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .rejseinspiration-kort:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 1.2rem 2.5rem rgba(0, 0, 0, 0.22);
+    }
+
+    .rejseinspiration-kort:hover .rejseinspiration-billede {
+        transform: scale(1.04);
+    }
+
+    .rejseinspiration-kort:hover .rejseinspiration-link::after {
+        transform: translateX(0.3rem);
+    }
+
+    .rejseinspiration-kort:nth-child(-n + 3) {
+        grid-column: span 4;
+    }
+
+    .rejseinspiration-kort:nth-child(n + 4) {
+        grid-column: span 3;
+    }
+
+    .rejseinspiration-badge {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    .rejseinspiration-tekst {
+        right: var(--afstand-s);
+        bottom: var(--afstand-s);
+        left: var(--afstand-s);
+    }
+
+    .rejseinspiration-tekst h3 {
+        font-size: 1.15rem;
+        line-height: 1.15;
+    }
+
+    .rejseinspiration-link,
+    .rejseinspiration-prikker {
+        display: none;
+    }
+}

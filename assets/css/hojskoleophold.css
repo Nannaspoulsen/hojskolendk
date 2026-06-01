@@ -1,0 +1,408 @@
+/* GENERELT */
+
+.ophold-intro,
+.hojskoleophold-rejser {
+    background-color: var(--farve-baggrund);
+}
+
+.ophold-intro h1,
+.hojskoleophold-rejser-top h2,
+.statistik-overskrift,
+.statistik-punkt strong {
+    font-family: var(--font-overskrift);
+}
+
+.ophold-intro p,
+.ophold-filter-knap,
+.ophold-filter-hjaelp,
+.hojskoleophold-rejser-top p,
+.statistik-punkt {
+    font-family: var(--font-broedtekst);
+}
+
+
+/* HERO */
+
+.ophold-hero {
+    width: 100%;
+}
+
+.ophold-hero-billede {
+    display: block;
+    width: 100%;
+    height: 29rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* INTRO OG FILTER */
+
+.ophold-intro {
+    padding: var(--afstand-l) 0 var(--afstand-sektion);
+}
+
+.ophold-intro-indhold {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.ophold-intro h1 {
+    max-width: 28rem;
+    color: var(--farve-moerk);
+
+    /* clamp gør overskriften fleksibel, så den passer bedre til både små og store skærme */
+    font-size: clamp(1.8rem, 9vw, 3rem);
+    line-height: 0.95;
+}
+
+.ophold-intro p {
+    max-width: 31rem;
+    color: var(--farve-moerk);
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.ophold-filter {
+    margin-top: 0.4rem;
+    padding: var(--afstand-l);
+    border-radius: 1rem;
+    background-color: var(--farve-groen-transparent);
+}
+
+.ophold-filter-indhold {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.ophold-filter-knap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--afstand-s);
+    width: 100%;
+    min-height: 4rem;
+    padding: 0 1.1rem;
+    border: 0;
+    border-radius: 0.35rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    color: var(--farve-moerk);
+    font-size: var(--tekst-normal);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ophold-filter-knap:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+.ophold-filter-knap img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.ophold-filter-hjaelp {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: var(--afstand-xs);
+    margin-top: 0.4rem;
+    color: var(--farve-moerk);
+    font-size: var(--tekst-lille);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.ophold-filter-hjaelp-ikon {
+    display: block;
+    flex: 0 0 auto;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: var(--farve-orange);
+
+    /* mask bruger SVG-filen som form, så ikonet kan farves med background-color */
+    -webkit-mask-image: url("../icons/life-ring-solid-full.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-image: url("../icons/life-ring-solid-full.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+
+
+/* HØJSKOLEOPHOLD REJSER */
+
+.hojskoleophold-rejser {
+    padding: var(--afstand-xl) 0 var(--afstand-sektion);
+}
+
+.hojskoleophold-rejser-top {
+    margin-bottom: 1.6rem;
+}
+
+.hojskoleophold-rejser-top h2 {
+    color: var(--farve-moerk);
+
+    /* clamp holder overskriften responsiv uden ekstra media queries */
+    font-size: clamp(2rem, 7vw, 3rem);
+    line-height: 1;
+}
+
+.hojskoleophold-rejser-top p {
+    margin-top: 0.3rem;
+    color: var(--farve-moerk);
+    font-size: var(--tekst-normal);
+}
+
+
+/* STATISTIK */
+
+.statistik-sektion {
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 0 var(--afstand-sektion);
+    background-color: var(--farve-orange);
+}
+
+.statistik-sektion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+
+    /* Radial gradients laver de bløde organiske mønstre i baggrunden. */
+    background-image:
+        radial-gradient(ellipse at 29% 40%,
+            transparent 0 38%,
+            rgba(255, 255, 255, 0.373) 39%,
+            transparent 41%),
+        radial-gradient(ellipse at 70% 20%,
+            transparent 0 34%,
+            rgba(255, 255, 255, 0.443) 35%,
+            transparent 37%),
+        radial-gradient(ellipse at 75% 85%,
+            transparent 0 30%,
+            rgba(255, 255, 255, 0.528) 31%,
+            transparent 33%);
+}
+
+.statistik-indhold {
+    position: relative;
+    z-index: 1;
+}
+
+.statistik-overskrift {
+    margin-inline: auto;
+    margin-bottom: var(--afstand-l);
+    color: var(--farve-hvid);
+    text-align: center;
+
+    /* clamp gør overskriften fleksibel, så den ikke bliver for stor på mobil */
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    line-height: 1.05;
+}
+
+.statistik-kort-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.anmeldelse-kort {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1.8rem;
+    border-radius: var(--radius);
+    background-color: var(--farve-hvid);
+}
+
+.anmeldelse-link {
+    display: block;
+    width: fit-content;
+}
+
+.anmeldelse-billede {
+    display: block;
+    width: 19rem;
+    max-width: 100%;
+}
+
+.statistik-tal-kort {
+    display: none;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+    .ophold-hero-billede {
+        height: 45rem;
+    }
+
+    .ophold-intro {
+        padding: 3.2rem 0 4.5rem;
+    }
+
+    .ophold-intro-indhold {
+        align-items: center;
+        gap: 1.4rem;
+        text-align: center;
+    }
+
+    .ophold-intro h1 {
+        max-width: none;
+        font-size: clamp(3rem, 4vw, 4.2rem);
+    }
+
+    .ophold-intro p {
+        max-width: 36rem;
+        font-size: 1.25rem;
+    }
+
+    .ophold-filter {
+        width: 100%;
+        margin-top: var(--afstand-l);
+        padding: 1.5rem 1.7rem;
+        border-radius: 0.6rem;
+    }
+
+    .ophold-filter h2 {
+        display: none;
+    }
+
+    .ophold-filter-indhold {
+        grid-template-columns: 1fr 1.1fr 1fr auto;
+        align-items: center;
+        gap: var(--afstand-s);
+    }
+
+    .ophold-filter-knap,
+    .ophold-filter-knap:nth-child(3) {
+        grid-column: auto;
+        min-height: 3.2rem;
+        font-size: 0.95rem;
+    }
+
+    .ophold-filter-hjaelp {
+        grid-column: auto;
+        justify-content: flex-end;
+        margin-top: 0;
+        white-space: nowrap;
+    }
+
+    .hojskoleophold-rejser {
+        padding: var(--afstand-sektion) 0 5rem;
+    }
+
+    .hojskoleophold-rejser-top {
+        margin-bottom: 1.5rem;
+    }
+
+    .hojskoleophold-rejser-top h2 {
+        font-size: 2.5rem;
+    }
+
+    .hojskoleophold-rejser-top p {
+        font-size: var(--tekst-normal);
+    }
+
+    .statistik-sektion {
+        padding: 5rem 0 5.5rem;
+    }
+
+    .statistik-overskrift {
+        margin-bottom: var(--afstand-xl);
+        font-size: 2.8rem;
+    }
+
+    .statistik-kort-wrapper {
+        display: grid;
+        grid-template-columns: 18rem 1fr;
+        gap: var(--afstand-s);
+        align-items: stretch;
+    }
+
+    .anmeldelse-kort {
+        align-items: center;
+        min-height: 11rem;
+        padding: var(--afstand-l);
+        border-radius: 0.7rem;
+    }
+
+    .anmeldelse-billede {
+        width: 13rem;
+    }
+
+    .statistik-tal-kort {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        min-height: 11rem;
+        padding: 2rem 2.5rem;
+        border-radius: 0.7rem;
+        background-color: var(--farve-hvid);
+    }
+
+    .statistik-punkt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        color: var(--farve-moerk);
+        text-align: center;
+    }
+
+    .statistik-ikon {
+        width: 1.9rem;
+        height: 1.9rem;
+        background-color: var(--farve-orange);
+
+        /* mask gør det muligt at bruge SVG-ikoner som ensfarvede CSS-ikoner */
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+    }
+
+    .statistik-ikon-tommer {
+        -webkit-mask-image: url("../icons/thumbs-up-regular-full.svg");
+        mask-image: url("../icons/thumbs-up-regular-full.svg");
+    }
+
+    .statistik-ikon-sol {
+        -webkit-mask-image: url("../icons/sun-regular-full.svg");
+        mask-image: url("../icons/sun-regular-full.svg");
+    }
+
+    .statistik-ikon-palme {
+        -webkit-mask-image: url("../icons/umbrella-beach-solid-full.svg");
+        mask-image: url("../icons/umbrella-beach-solid-full.svg");
+    }
+
+    .statistik-ikon-rejse {
+        -webkit-mask-image: url("../icons/plane-solid-full.svg");
+        mask-image: url("../icons/plane-solid-full.svg");
+    }
+
+    .statistik-punkt strong {
+        font-size: 1.45rem;
+        line-height: 1;
+    }
+
+    .statistik-punkt p {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .statistik-punkt a {
+        color: var(--farve-moerk);
+    }
+}

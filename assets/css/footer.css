@@ -1,0 +1,300 @@
+/* Fælles footer på websitet.
+
+På mobil fungerer menugrupperne som accordions med details og summary, så footeren ikke bliver for lang på små skærme.
+På desktop vises menugrupperne åbent som almindelige linklister, fordi der er mere plads i layoutet.
+
+Partnerlogoerne ligger i et horisontalt spor med animation. Sporet er bredere end viewporten og flyttes med translateX, så logoerne får en rullende effekt.
+*/
+
+
+/* FOOTER */
+
+.footer {
+    overflow: hidden;
+    padding-block: var(--afstand-sektion) var(--afstand-xl);
+    background-color: var(--farve-moerk);
+    color: var(--farve-hvid);
+}
+
+.footer a {
+    color: inherit;
+}
+
+.footer-indhold,
+.footer-top,
+.footer-partnere,
+.footer-bund {
+    display: grid;
+}
+
+.footer-indhold {
+    gap: var(--afstand-xl);
+}
+
+.footer-top {
+    gap: 2.5rem;
+}
+
+
+/* BRAND */
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: var(--afstand-m);
+    font-family: var(--font-overskrift);
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1;
+    text-decoration: none;
+    transform: rotate(-2deg);
+}
+
+.footer-tekst {
+    max-width: 31rem;
+    margin-bottom: var(--afstand-l);
+    font-size: 0.8rem;
+}
+
+.footer-kontakt {
+    display: grid;
+    gap: 0.45rem;
+    margin-bottom: var(--afstand-l);
+}
+
+.footer-kontakt-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer-kontakt-link img,
+.footer-sociale img {
+    width: 2.2rem;
+    height: 2.2rem;
+    filter: brightness(0) invert(1);
+}
+
+.footer-aabningstid {
+    margin-bottom: var(--afstand-l);
+    font-size: 0.8rem;
+}
+
+.footer-sociale {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-sociale a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MENUER */
+
+/* 
+På mobil bruger jeg details og summary som accordion.
+Summary er den synlige overskrift, og indholdet åbnes/lukkes af browseren.
+*/
+
+.footer-menu-gruppe {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.footer-menu-gruppe summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4.5rem;
+    font-family: var(--font-overskrift);
+    font-size: 1.5rem;
+    list-style: none;
+    cursor: pointer;
+}
+
+.footer-menu-gruppe summary::-webkit-details-marker {
+    display: none;
+}
+
+.footer-menu-ikon {
+    font-family: var(--font-broedtekst);
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.footer-menu {
+    display: grid;
+    gap: var(--afstand-s);
+    padding: 0 0 var(--afstand-m) 1.2rem;
+    font-weight: 700;
+}
+
+.footer-menu a {
+    text-decoration: none;
+}
+
+
+/* PARTNERE */
+
+.footer-partnere {
+    gap: var(--afstand-m);
+}
+
+.footer-partnere h2 {
+    font-family: var(--font-overskrift);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.footer-logoer {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 
+Logo-sporet er bredere end skærmen.
+Animationen flytter det halvdelen af bredden, så logoerne kan gentages flydende.
+*/
+
+.footer-logo-spor {
+    display: flex;
+    align-items: center;
+    gap: var(--afstand-l);
+    width: max-content;
+    animation: logo-scroll 22s linear infinite;
+}
+
+.footer-logo-spor img {
+    flex: 0 0 auto;
+    width: auto;
+    height: 2.8rem;
+    max-width: none;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+@keyframes logo-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* BUND */
+
+.footer-bund {
+    gap: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--afstand-s) var(--afstand-m);
+}
+
+.footer-links a {
+    text-decoration: underline;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+    .footer,
+    .footer-indhold {
+        overflow: hidden;
+    }
+
+    .footer-top {
+        grid-template-columns: 30rem 14rem minmax(0, 1fr);
+        align-items: start;
+        gap: 2.5rem;
+    }
+
+    .footer-brand,
+    .footer-menu-gruppe {
+        min-width: 0;
+    }
+
+    .footer-logo {
+        max-width: 100%;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+    }
+
+    .footer-menu-gruppe {
+        display: block;
+        border-bottom: 0;
+    }
+
+    .footer-menu-gruppe summary {
+        min-height: auto;
+        margin-bottom: var(--afstand-m);
+        pointer-events: none;
+    }
+
+    /* 
+    På desktop skal details-indholdet altid vises som en almindelig menu.
+    !important bruges her for at overstyre browserens lukkede details-adfærd.
+    */
+
+    .footer-menu-gruppe> :not(summary) {
+        display: grid !important;
+    }
+
+    .footer-menu-ikon {
+        display: none;
+    }
+
+    .footer-menu {
+        gap: 1.1rem;
+        padding: 0;
+    }
+
+    .footer-menu:not(.footer-menu-ophold) {
+        list-style: none;
+    }
+
+    .footer-menu-ophold {
+        max-width: 100%;
+        padding-left: var(--afstand-s);
+        font-size: 0.68rem;
+        line-height: 1.25;
+    }
+
+    .footer-menu-ophold a {
+        overflow-wrap: anywhere;
+    }
+
+    .footer-logo-spor {
+        width: max-content;
+    }
+
+    .footer-bund {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: center;
+        gap: var(--afstand-l);
+    }
+
+    .footer-bund p,
+    .footer-links {
+        min-width: 0;
+    }
+
+    .footer-bund p:nth-child(2) {
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: flex-end;
+    }
+}

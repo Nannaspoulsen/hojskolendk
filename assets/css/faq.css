@@ -1,0 +1,245 @@
+/* SIDE-SPECIFIK HEADER GENBRUGT FRA LAER OS AT KENDE */
+
+.side-laer-os-at-kende .toplinje,
+.side-laer-os-at-kende .side-header {
+    background-color: var(--farve-baggrund);
+}
+
+.side-laer-os-at-kende .toplinje-social-link,
+.side-laer-os-at-kende .toplinje-punkt,
+.side-laer-os-at-kende .toplinje-hjaelp {
+    color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .toplinje-punkt .toplinje-ikon,
+.side-laer-os-at-kende .toplinje-hjaelp .toplinje-ikon,
+.side-laer-os-at-kende .logo {
+    color: var(--farve-orange);
+}
+
+.side-laer-os-at-kende .navigation-link,
+.side-laer-os-at-kende .navigation-dropdown-knap {
+    color: #030027;
+}
+
+.side-laer-os-at-kende .navigation-dropdown-knap img {
+    filter: none;
+}
+
+.side-laer-os-at-kende .menu-linje {
+    background-color: var(--farve-moerk);
+}
+
+
+/* MOBILMENU ÅBEN */
+
+.side-laer-os-at-kende .navigation.er-aaben {
+    background-color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-link,
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap {
+    color: var(--farve-hvid);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap img {
+    filter: brightness(0) invert(1);
+}
+
+.side-laer-os-at-kende .menu-knap.er-aaben .menu-linje {
+    background-color: var(--farve-hvid);
+}
+
+
+/* FAQ */
+
+.svar-sektion {
+    padding: var(--afstand-sektion) 0 5rem;
+    background-color: var(--farve-baggrund);
+}
+
+.svar-indhold {
+    display: grid;
+    gap: var(--afstand-sektion);
+}
+
+
+/* PERSONER */
+
+.svar-personer {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+    padding-left: 0.3rem;
+}
+
+.svar-personer img {
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-left: -0.6rem;
+    border: 0.25rem solid var(--farve-orange);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.svar-personer img:first-child {
+    margin-left: 0;
+}
+
+.svar-personer .svar-person-stor {
+    z-index: 1;
+    width: 5.2rem;
+    height: 5.2rem;
+}
+
+
+/* TEKST */
+
+.svar-tekst h1,
+.faq h2 {
+    color: var(--farve-moerk);
+    font-family: var(--font-overskrift);
+    line-height: 1.05;
+}
+
+.svar-tekst h1 {
+    max-width: 32rem;
+    margin-bottom: 1.8rem;
+    font-size: clamp(2.5rem, 11vw, 4.2rem);
+}
+
+.svar-fed {
+    font-weight: 500;
+}
+
+.svar-tekst p {
+    max-width: 39rem;
+    margin-bottom: var(--afstand-m);
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: var(--tekst-normal);
+    line-height: 1.45;
+}
+
+
+/* KONTAKT */
+
+.svar-kontakt {
+    display: grid;
+    gap: 0.35rem;
+    margin: 1.7rem 0;
+}
+
+.svar-kontakt-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: fit-content;
+    color: var(--farve-orange);
+    font-family: var(--font-broedtekst);
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.svar-kontakt-link::before {
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--farve-orange);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.svar-telefon::before {
+    -webkit-mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
+    mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
+}
+
+.svar-mail::before {
+    -webkit-mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
+    mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
+}
+
+
+/* FAQ-PUNKTER */
+
+.faq h2 {
+    margin-bottom: var(--afstand-l);
+    font-size: clamp(1.9rem, 6vw, 2.3rem);
+}
+
+.faq-punkt {
+    border-bottom: 0.1rem dotted rgba(34, 34, 34, 0.45);
+}
+
+.faq-punkt summary {
+    position: relative;
+    padding: 1.4rem 2.5rem 1.4rem 0;
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-punkt summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-punkt summary::after {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--farve-moerk);
+    transition: transform 0.2s ease;
+    -webkit-mask: url("../icons/angle-down-solid-full.svg") center / contain no-repeat;
+    mask: url("../icons/angle-down-solid-full.svg") center / contain no-repeat;
+}
+
+.faq-punkt[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-punkt p {
+    max-width: 38rem;
+    margin: 0 0 1.3rem;
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+    .svar-sektion {
+        padding: 9rem 0 6rem;
+    }
+
+    .svar-indhold {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 7rem;
+    }
+
+    .svar-tekst h1 {
+        font-size: clamp(3.8rem, 4.8vw, 5.3rem);
+    }
+
+    .faq {
+        padding-top: var(--afstand-l);
+    }
+
+    .faq-punkt summary {
+        font-size: var(--tekst-normal);
+    }
+}

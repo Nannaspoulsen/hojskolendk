@@ -1,0 +1,1072 @@
+/* FORSIDE */
+
+/* GENERELLE SEKTIONER */
+
+.snart-ophold,
+.statistik-sektion,
+.oplevelse-sektion,
+.infomoede-sektion,
+.rejsebreve-sektion,
+.tryghed-sektion {
+  padding-top: var(--afstand-xl);
+  padding-bottom: var(--afstand-m);
+  overflow: hidden;
+}
+
+.snart-ophold-titel,
+.statistik-overskrift,
+.oplevelse-overskrift,
+.infomoede-overskrift,
+.rejsebreve-overskrift,
+.tryghed-overskrift {
+  margin: 0 0 var(--afstand-l);
+  color: var(--farve-moerk);
+  font-family: var(--font-overskrift);
+  font-size: var(--tekst-sektion);
+  line-height: 1.05;
+  text-align: left;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+
+  /* calc() bruges til at trække højden på toplinjen/headeren fra viewporten. */
+  min-height: calc(98vh - 4rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background: rgba(34, 34, 34, 0.15);
+}
+
+.hero-indhold {
+  position: relative;
+  z-index: 2;
+  padding: var(--side-padding);
+  text-align: center;
+}
+
+.hero-titel {
+  max-width: 9ch;
+  color: var(--farve-hvid);
+  font-family: var(--font-overskrift);
+  font-size: var(--tekst-hero);
+  line-height: 1.05;
+}
+
+/* SNART OPHOLD */
+
+.snart-ophold {
+  padding-top: 3rem;
+}
+
+.snart-ophold-liste {
+  display: grid;
+  gap: var(--afstand-m);
+}
+
+.snart-ophold-knap {
+  width: min(100%, 12rem);
+  margin-top: var(--afstand-m);
+  margin-bottom: var(--afstand-m);
+}
+
+/* STATISTIK */
+
+.statistik-sektion {
+  position: relative;
+  padding: 3.5rem 0 4rem;
+  background-color: var(--farve-orange);
+}
+
+.statistik-sektion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+
+  /* Radial gradients laver de bløde organiske mønstre i baggrunden. */
+  background-image:
+    radial-gradient(
+      ellipse at 29% 40%,
+      transparent 0 38%,
+      rgba(255, 255, 255, 0.373) 39%,
+      transparent 41%
+    ),
+    radial-gradient(
+      ellipse at 70% 20%,
+      transparent 0 34%,
+      rgba(255, 255, 255, 0.443) 35%,
+      transparent 37%
+    ),
+    radial-gradient(
+      ellipse at 75% 85%,
+      transparent 0 30%,
+      rgba(255, 255, 255, 0.528) 31%,
+      transparent 33%
+    );
+}
+
+.statistik-indhold {
+  position: relative;
+  z-index: 1;
+}
+
+.statistik-overskrift {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  color: var(--farve-hvid);
+  font-family: "Dela Gothic One", sans-serif;
+
+  /* clamp() gør teksten responsiv med minimum, fleksibel værdi og maksimum. */
+  font-size: clamp(1.8rem, 8vw, 3rem);
+
+  text-align: center;
+}
+
+.statistik-kort-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.anmeldelse-kort {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  background-color: var(--farve-hvid);
+}
+
+.anmeldelse-link {
+  display: block;
+  width: fit-content;
+}
+
+.anmeldelse-billede {
+  display: block;
+  width: 19rem;
+  max-width: 100%;
+}
+
+.statistik-tal-kort {
+  display: none;
+}
+
+/* OPLEVELSER */
+
+.oplevelse-sektion {
+  padding: 4rem 0;
+}
+
+/* OPLEVELSE-SLIDER - MOBIL */
+
+.oplevelse-indhold {
+  position: relative;
+}
+
+.oplevelse-slider {
+  display: flex;
+  gap: 1rem;
+  margin-inline: -1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.oplevelse-kort {
+  flex: 0 0 16rem;
+  scroll-snap-align: center;
+}
+
+.oplevelse-billede {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Mobil-affordance: orange cirkel med hvid pil, som ligger ovenpå slideren */
+
+.oplevelse-indhold::after {
+  content: "";
+  position: absolute;
+  right: var(--side-padding);
+  bottom: 10rem;
+  z-index: 5;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  background-color: var(--farve-orange);
+  box-shadow: var(--skygge);
+  pointer-events: none;
+  animation: slider-pil-bevaegelse 1.4s ease-in-out infinite;
+}
+
+.oplevelse-indhold::before {
+  content: "";
+  position: absolute;
+  right: calc(var(--side-padding) + 0.7rem);
+  bottom: 10.7rem;
+  z-index: 6;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--farve-hvid);
+
+  /* Mask bruger SVG-filen som form, så pilen kan farves hvid med CSS. */
+  mask-image: url("../icons/arrow-right-solid-full.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  /* Webkit-mask er nødvendig for Safari. */
+  -webkit-mask-image: url("../icons/arrow-right-solid-full.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  pointer-events: none;
+  animation: slider-pil-bevaegelse 1.4s ease-in-out infinite;
+}
+
+/* Pilen bevæger sig diskret mod højre og tilbage igen. */
+
+@keyframes slider-pil-bevaegelse {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0.45rem);
+  }
+}
+
+
+.oplevelse-kort {
+  flex: 0 0 16rem;
+  padding: 0.45rem 0.45rem 1rem;
+  border-radius: var(--radius);
+  background: var(--farve-hvid);
+
+  /* Fortæller browseren hvor hvert kort skal være i slideren. */
+  scroll-snap-align: center;
+}
+
+/* rotate giver polaroid-kortene en skrå placering. */
+.oplevelse-kort:nth-child(1),
+.oplevelse-kort:nth-child(4) {
+  rotate: -5deg;
+}
+
+.oplevelse-kort:nth-child(2),
+.oplevelse-kort:nth-child(5) {
+  rotate: -2deg;
+}
+
+.oplevelse-kort:nth-child(3) {
+  rotate: 4deg;
+}
+.oplevelse-kort:nth-child(6) {
+  rotate: 6deg;
+}
+
+.oplevelse-billede {
+  width: 100%;
+
+  /* aspect-ratio holder billederne kvadratiske uden at give dem fast højde. */
+  aspect-ratio: 1 / 1;
+
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.oplevelse-kort-overskrift {
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* INFOMØDE */
+
+.infomoede-indhold {
+  display: grid;
+  gap: var(--afstand-xl);
+  
+}
+
+.infomoede-tekst {
+  order: 1;
+}
+
+.infomoede-billeder {
+  position: relative;
+  order: 2;
+
+  /* min() sørger for, at billedområdet aldrig bliver bredere end skærmen. */
+  width: min(100%, 340px);
+
+  min-height: 330px;
+  margin-inline: auto;
+}
+
+.infomoede-label {
+  margin-bottom: var(--afstand-xs);
+  color: var(--farve-orange);
+  font-size: var(--tekst-lille);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.infomoede-broedtekst {
+  max-width: 35rem;
+  margin-bottom: var(--afstand-l);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.infomoede-datoer {
+  margin-bottom: var(--afstand-l);
+}
+
+.infomoede-dato {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--afstand-s);
+  padding-block: 0.85rem;
+  border-bottom: var(--streg);
+}
+
+.infomoede-dato-venstre {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.infomoede-dato p {
+  font-size: 0.95rem;
+}
+
+.infomoede-tid {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.infomoede-ikon {
+  width: 0.95rem;
+  height: 0.95rem;
+
+  /* Filter bruges til at farve SVG-ikonet orange uden at ændre selve SVG-filen. */
+  filter: brightness(0) saturate(100%) invert(36%) sepia(96%) saturate(1931%)
+    hue-rotate(17deg) brightness(94%) contrast(99%);
+}
+
+.infomoede-billede {
+  position: absolute;
+  width: 76%;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.infomoede-billede-baggrund {
+  height: 230px;
+}
+
+.infomoede-billede-venstre {
+  top: 50px;
+  left: 2%;
+
+  /* transform bruges til at rotere billedet, så billedgruppen får collage-effekt. */
+  transform: rotate(-10deg);
+}
+
+.infomoede-billede-hoejre {
+  top: 18px;
+  right: 3%;
+  transform: rotate(9deg);
+}
+
+.infomoede-billede-forgrund {
+  top: 40px;
+  left: 50%;
+  z-index: 2;
+  width: 85%;
+  height: 290px;
+
+  /* translateX(-50%) centrerer billedet præcist ud fra dets egen bredde. */
+  transform: translateX(-50%) rotate(6deg);
+}
+
+.infomoede-stempel {
+  position: absolute;
+  top: -30px;
+  right: -45px;
+  z-index: 3;
+  width: 8.75rem;
+}
+
+/* REJSEBREVE */
+
+.rejsebreve-top {
+  max-width: 38rem;
+  margin-bottom: var(--afstand-l);
+}
+
+.rejsebreve-tekst {
+  max-width: 38rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.rejsebreve-slider {
+  display: flex;
+  gap: var(--afstand-s);
+
+  /* calc() bruges til at lade slideren fortsætte helt ud til højre side af viewporten. */
+  margin-right: calc((100vw - 100%) / -2);
+
+  padding-right: var(--side-padding);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  /* Skjuler scrollbar i Firefox. */
+  scrollbar-width: none;
+}
+
+/* Skjuler scrollbar i Chrome, Safari og Edge. */
+.rejsebreve-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.rejsebrev-kort {
+  position: relative;
+  flex: 0 0 88%;
+  max-width: 360px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--farve-hvid);
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.rejsebrev-kort-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.rejsebrev-billede {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+}
+
+.rejsebrev-indhold {
+  padding: var(--afstand-m);
+}
+
+.rejsebrev-titel {
+  margin-bottom: var(--afstand-xs);
+  color: var(--farve-moerk);
+  font-family: var(--font-overskrift);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.rejsebrev-citat {
+  margin-bottom: var(--afstand-s);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.rejsebrev-navn {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+ .rejsebreve-knap {
+   grid-column: 1;
+   grid-row: 1;
+   width: fit-content;
+ }
+
+.rejsebreve-bund {
+  display: grid;
+  gap: var(--afstand-m);
+  margin-top: var(--afstand-l);
+}
+
+.rejsebreve-pile {
+  display: none;
+}
+
+.rejsebreve-prikker {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.rejsebreve-prik {
+  width: 0.6rem;
+  height: 0.6rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(34, 34, 34, 0.25);
+  cursor: pointer;
+}
+
+.rejsebreve-prik.aktiv {
+  background: var(--farve-moerk);
+}
+
+.rejsebreve-pil {
+  width: 3rem;
+  height: 3rem;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--farve-hvid);
+  cursor: pointer;
+}
+
+.rejsebreve-pil img {
+  width: 1rem;
+}
+
+/* TRYGHED */
+
+.tryghed-punkter {
+  display: grid;
+  gap: var(--afstand-m);
+}
+
+.tryghed-punkt h3 {
+  margin-bottom: 0.25rem;
+  font-family: var(--font-overskrift);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.tryghed-punkt p {
+  font-size: var(--tekst-normal);
+  line-height: 1.4;
+}
+
+.tryghed-knap {
+  margin-top: var(--afstand-l);
+}
+
+.tryghed-billeder {
+  position: relative;
+  max-width: 25rem;
+  margin: var(--afstand-l) auto 0;
+}
+
+.tryghed-billede {
+  width: 100%;
+
+  /* aspect-ratio styrer billedets proportioner uden fast højde. */
+  aspect-ratio: 1 / 0.6;
+
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.tryghed-billede-bund {
+  margin-top: var(--afstand-s);
+}
+
+.tryghed-stempel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 8rem;
+
+  /* translate flytter stemplet ud fra dets egen størrelse, så det ligger ovenpå billederne. */
+  transform: translate(20%, -50%);
+}
+
+/* FAQ */
+
+.faq-sektion {
+  padding-block: var(--afstand-sektion);
+  overflow: hidden;
+}
+
+.faq-indhold {
+  display: grid;
+  gap: 3rem;
+}
+
+.faq-tekst {
+  max-width: 35rem;
+}
+
+.faq-personer {
+  display: flex;
+  margin-bottom: 2rem;
+  padding-left: 0.3rem;
+}
+
+.faq-person {
+  width: 5.1rem;
+  height: 5.1rem;
+  border: 3px solid var(--farve-orange);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--farve-orange);
+}
+
+.faq-person + .faq-person {
+  margin-left: -0.75rem;
+}
+
+.faq-overskrift,
+.faq-liste-overskrift {
+  margin: 0 0 var(--afstand-l);
+  color: var(--farve-moerk);
+  font-family: var(--font-overskrift);
+  font-size: var(--tekst-sektion);
+  line-height: 1.05;
+}
+
+.faq-intro {
+  margin-bottom: var(--afstand-m);
+  font-weight: 800;
+}
+
+.faq-tekst p {
+  margin-bottom: var(--afstand-m);
+}
+
+.faq-kontakt {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.faq-kontakt-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  color: var(--farve-orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.faq-kontakt-link img {
+  width: 1.25rem;
+  height: 1.25rem;
+
+  /* Filter bruges her til at give kontaktikonerne samme orange farve som resten af designet. */
+  filter: brightness(0) saturate(100%) invert(36%) sepia(96%) saturate(1931%)
+    hue-rotate(17deg) brightness(94%) contrast(99%);
+}
+
+.faq-liste-overskrift {
+  margin-bottom: 1.5rem;
+
+  /* clamp() gør underoverskriften fleksibel mellem mobil og desktop. */
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+}
+
+.faq-punkt {
+  border-bottom: 1px dashed rgba(34, 34, 34, 0.35);
+}
+
+.faq-punkt summary {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Fjerner browserens standardpil på details/summary i Safari og Chrome. */
+.faq-punkt summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-punkt summary img {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+
+  /* transition gør rotationen af pilen blød, når FAQ-punktet åbnes. */
+  transition: transform 0.2s ease;
+}
+
+.faq-punkt[open] summary img {
+  transform: rotate(180deg);
+}
+
+.faq-punkt p {
+  max-width: 40rem;
+  margin: -0.4rem 0 1.25rem;
+  font-size: var(--tekst-lille);
+}
+
+.faq-knap {
+  margin-top: 2rem;
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+  .hero-titel {
+    max-width: 12ch;
+  }
+
+  .snart-ophold-titel {
+    max-width: none;
+    font-family: "Dela Gothic One", sans-serif;
+
+    /* clamp() holder overskriften stor, men stadig kontrolleret på brede skærme. */
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .snart-ophold-liste {
+    gap: var(--afstand-s);
+  }
+
+  .snart-ophold-knap {
+    display: none;
+  }
+
+  .statistik-sektion {
+    padding: 5rem 0 5.5rem;
+  }
+
+  .statistik-overskrift {
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .statistik-kort-wrapper {
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .anmeldelse-kort {
+    align-items: center;
+    min-height: 11rem;
+    padding: 2rem;
+    border-radius: 0.7rem;
+  }
+
+  .anmeldelse-billede {
+    width: 13rem;
+  }
+
+  .statistik-tal-kort {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 11rem;
+    padding: 2rem 2.5rem;
+    border-radius: 0.7rem;
+    background-color: var(--farve-hvid);
+  }
+
+  .statistik-punkt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    color: var(--farve-moerk);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+
+  .statistik-ikon {
+    width: 1.9rem;
+    height: 1.9rem;
+    background-color: var(--farve-orange);
+
+    /* Mask gør SVG-filen til en form, som kan farves med background-color. */
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+  }
+
+  .statistik-ikon-tommer {
+    mask-image: url("../icons/thumbs-up-regular-full.svg");
+  }
+
+  .statistik-ikon-sol {
+    mask-image: url("../icons/sun-regular-full.svg");
+  }
+
+  .statistik-ikon-palme {
+    mask-image: url("../icons/umbrella-beach-solid-full.svg");
+  }
+
+  .statistik-ikon-rejse {
+    mask-image: url("../icons/plane-solid-full.svg");
+  }
+
+  .statistik-punkt strong {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 1.45rem;
+    line-height: 1;
+  }
+
+  .statistik-punkt p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .statistik-punkt a {
+    color: var(--farve-moerk);
+  }
+
+  .oplevelse-sektion {
+    height: 140vh;
+    padding: 0;
+
+    /* overflow: clip skjuler indhold uden at skabe ekstra scrollbars. */
+    overflow: clip;
+  }
+
+  .oplevelse-indhold {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+    .oplevelse-indhold::before,
+    .oplevelse-indhold::after {
+      display: none;
+    }
+
+  .oplevelse-overskrift {
+    /* min() sikrer, at overskriften følger containeren, men stadig har side-padding. */
+    width: min(100% - var(--side-padding) * 2, var(--container-bredde));
+
+    margin: 0 auto 3rem;
+    text-align: left;
+  }
+
+  .oplevelse-slider {
+    width: max-content;
+    gap: 3.5rem;
+    margin: 0;
+    padding: 2rem 0 3rem var(--side-padding);
+    overflow: visible;
+    scroll-snap-type: none;
+
+    /* CSS-variablen ændres med JavaScript, så slideren kan bevæge sig ved scroll. */
+    transform: translateX(var(--oplevelse-rykning, 0px));
+
+    /* Fortæller browseren, at transform ændrer sig, så animationen bliver mere smooth. */
+    will-change: transform;
+  }
+
+  .oplevelse-kort {
+    /* clamp() giver kortene en fleksibel bredde, men holder dem inden for min/max. */
+    flex: 0 0 clamp(22rem, 24vw, 30rem);
+
+    padding: 1rem;
+  }
+
+  .infomoede-indhold {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--afstand-xl);
+  }
+
+  .infomoede-billeder {
+    order: 1;
+    width: min(100%, 560px);
+    min-height: 520px;
+  }
+
+  .infomoede-tekst {
+    order: 2;
+  }
+
+  .infomoede-billede {
+    width: 78%;
+  }
+
+  .infomoede-billede-baggrund {
+    height: 390px;
+  }
+
+  .infomoede-billede-venstre {
+    top: 118px;
+    left: 2%;
+  }
+
+  .infomoede-billede-hoejre {
+    top: 74px;
+    right: 4%;
+  }
+
+  .infomoede-billede-forgrund {
+    top: 120px;
+    width: 78%;
+    height: 395px;
+  }
+
+  .infomoede-stempel {
+    top: 30px;
+    width: 11.5rem;
+  }
+
+  .rejsebrev-kort {
+    flex-basis: 390px;
+    max-width: 390px;
+
+    /* transition gør hover-effekten blød i stedet for brat. */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .rejsebrev-kort:hover {
+    transform: translateY(-0.55rem);
+    box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.194);
+  }
+
+  .rejsebrev-billede {
+    height: 250px;
+  }
+
+  .rejsebreve-bund {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .rejsebreve-pile {
+    display: flex;
+    gap: var(--afstand-s);
+  }
+
+
+  .rejsebreve-prikker {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-content: flex-end;
+  }
+
+  .tryghed-indhold {
+    display: grid;
+
+    /* minmax(0, 1fr) forhindrer grid-kolonnen i at blive bredere end pladsen tillader. */
+    grid-template-columns: minmax(0, 1fr) minmax(28rem, 38rem);
+
+    align-items: center;
+    gap: var(--afstand-xl);
+  }
+
+  .tryghed-punkter {
+    gap: var(--afstand-l);
+  }
+
+  .tryghed-punkt h3 {
+    font-size: 1.2rem;
+  }
+
+  .tryghed-punkt p {
+    max-width: 38rem;
+    font-size: 1.1rem;
+  }
+
+  .tryghed-billeder {
+    display: grid;
+    gap: 0.5rem;
+
+    /* calc() gør billedområdet lidt bredere end sin grid-kolonne for at give mere visuelt overlap. */
+    width: calc(100% + 3rem);
+
+    margin-right: 1rem;
+    justify-self: end;
+  }
+
+  .tryghed-billede {
+    /* Billederne gøres bredere end deres container for at skabe det udskudte desktop-look. */
+    width: calc(100% + 5rem);
+
+    max-width: none;
+    justify-self: end;
+  }
+
+  .tryghed-stempel {
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  .faq-sektion {
+    padding-block: 7rem;
+  }
+
+  .faq-indhold {
+    display: grid;
+
+    /* Første kolonne er fleksibel, anden kolonne holder FAQ-listen i en kontrolleret bredde. */
+    grid-template-columns: minmax(0, 1fr) minmax(28rem, 35rem);
+
+    align-items: start;
+
+    /* clamp() giver fleksibel afstand mellem kolonnerne uden at den bliver for lille eller for stor. */
+    gap: clamp(5rem, 9vw, 9rem);
+  }
+
+  .faq-person {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+
+  .faq-overskrift {
+    max-width: 31rem;
+    margin-bottom: var(--afstand-m);
+  }
+
+  .faq-liste {
+    padding-top: 2.8rem;
+  }
+
+  .faq-punkt summary {
+    min-height: 4.5rem;
+    font-size: 1.1rem;
+  }
+
+  .faq-knap {
+    display: none;
+  }
+}

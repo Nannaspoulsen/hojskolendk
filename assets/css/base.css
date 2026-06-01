@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* RESET OG VARIABLER */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --farve-baggrund: #eee3d9;
+    --farve-orange: #ce5501;
+    --farve-groen: #15803d;
+    --farve-groen-transparent: rgba(21, 128, 61, 0.25);
+    --farve-moerk: #222222;
+    --farve-hvid: #ffffff;
+
+    --font-overskrift: "Dela Gothic One", sans-serif;
+    --font-broedtekst: "Poppins", sans-serif;
+
+    --tekst-lille: 0.875rem;
+    --tekst-normal: 1rem;
+    --tekst-mellem: 1.25rem;
+    --tekst-sektion: clamp(2.25rem, 7vw, 3.8rem);
+    --tekst-hero: clamp(2.6rem, 7vw, 5.5rem);
+
+    --side-padding: 1.25rem;
+    --container-bredde: 1200px;
+
+    --afstand-xs: 0.5rem;
+    --afstand-s: 1rem;
+    --afstand-m: 1.5rem;
+    --afstand-l: 2rem;
+    --afstand-xl: 4rem;
+    --afstand-sektion: 4rem;
+
+    --radius: 5px;
+    --skygge: 0 0.75rem 1.5rem rgba(34, 34, 34, 0.15);
+    --streg: 2px dashed rgba(206, 85, 1, 0.35);
+}
+
+/* BASE */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--farve-baggrund);
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: var(--tekst-normal);
+    line-height: 1.5;
+}
+
+body.er-laast {
+    overflow: hidden;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+.container,
+.tryghed-indhold {
+    width: min(100% - var(--side-padding) * 2, var(--container-bredde));
+    margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+    :root {
+        --side-padding: 3rem;
+        --afstand-sektion: 6rem;
+    }
+}

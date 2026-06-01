@@ -1,0 +1,1878 @@
+/* GENERELT */
+
+.ophold-hero-overskrift,
+.rejseplan-overskrift,
+.ophold-oversigt-overskrift,
+.hojdepunkter-overskrift,
+.priser-overskrift,
+.afgange-maaned,
+.destinationer-overskrift,
+.destination-navn,
+.program-overskrift,
+.program-rejsebreve-overskrift,
+.program-rejsebrev-indhold p,
+.inkluderet-overskrift,
+.inkluderet-kort-titel,
+.inkluderet-underoverskrift,
+.fag-overskrift,
+.fag-tekst h3,
+.kontakt-overskrift,
+.kontakt-stempel,
+.andre-rejser-overskrift {
+  font-family: var(--font-overskrift);
+  color: var(--farve-moerk);
+}
+
+.ophold-hero-info p,
+.ophold-hero-knap,
+.ophold-menu-link,
+.rejseplan-liste li,
+.hojdepunkt-navn,
+.priser-tekst,
+.priser-info-punkt,
+.tooltip-knap,
+.tooltip-boks,
+.afgang-status,
+.afgang-data,
+.destinationer-label,
+.destination-symbol,
+.destination-info-punkt p,
+.destination-info-punkt span,
+.destination-tekst p,
+.program-label,
+.program-tekst,
+.program-tid,
+.program-aktivitet,
+.inkluderet-label,
+.inkluderet-destination-label,
+.inkluderet-liste li,
+.fag-label,
+.fag-tekst p,
+.fag-tekst li,
+.kontakt-label,
+.kontakt-tekst p,
+.kontakt-link,
+.andre-rejser-label {
+  font-family: var(--font-broedtekst);
+}
+
+.ophold-menu-link,
+.rejseplan-liste li,
+.hojdepunkter-tekst,
+.priser-tekst,
+.priser-info-punkt,
+.afgang-titel,
+.afgang-status,
+.afgang-data,
+.destination-top,
+.destination-navn,
+.destination-symbol,
+.destination-info-punkt p,
+.destination-info-punkt span,
+.destination-tekst p,
+.program-tekst,
+.program-tid,
+.program-aktivitet,
+.program-rejsebrev-kort,
+.program-rejsebrev-indhold p,
+.inkluderet-kort-titel,
+.inkluderet-underoverskrift,
+.inkluderet-liste li,
+.fag-tekst h3,
+.fag-tekst p,
+.fag-tekst li,
+.kontakt-tekst p,
+.andre-rejser-overskrift {
+  color: var(--farve-moerk);
+}
+
+.destinationer-label,
+.program-label,
+.inkluderet-label,
+.inkluderet-destination-label,
+.fag-label,
+.kontakt-label,
+.kontakt-link,
+.andre-rejser-label {
+  color: var(--farve-orange);
+}
+
+.hojdepunkter-sektion,
+.priser-sektion,
+.destinationer-sektion,
+.program-sektion,
+.inkluderet-sektion,
+.fag-sektion,
+.kontakt-sektion {
+  background: var(--farve-baggrund);
+}
+
+.hojdepunkter-liste,
+.program-rejsebreve-liste,
+.inkluderet-spor,
+.fag-spor {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hojdepunkter-liste::-webkit-scrollbar,
+.program-rejsebreve-liste::-webkit-scrollbar,
+.inkluderet-spor::-webkit-scrollbar,
+.fag-spor::-webkit-scrollbar,
+.ophold-menu-indhold::-webkit-scrollbar {
+  display: none;
+}
+
+/* HERO */
+
+.ophold-hero {
+  position: relative;
+  /* calc trækker headerens højde fra, så heroen stadig fylder næsten hele skærmen. */
+  min-height: calc(100svh - 4.5rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("../img/Maldiverne.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.ophold-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--farve-moerk);
+  opacity: 0.3;
+}
+
+.ophold-hero-indhold {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.ophold-hero-overskrift {
+  max-width: 42rem;
+  margin-bottom: var(--afstand-m);
+  font-size: clamp(1rem, 7vw, 5rem);
+  line-height: 1.2;
+  color: var(--farve-baggrund);
+}
+
+.ophold-hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.3rem;
+}
+
+.ophold-hero-info p {
+  margin: 0;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 0.8rem 2rem rgba(34, 34, 34, 0.143);
+  font-size: var(--tekst-normal);
+  color: var(--farve-hvid);
+}
+
+.ophold-hero-knap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.8rem;
+  padding: 0 1.6rem;
+  border: none;
+  border-radius: 0.35rem;
+  background-color: var(--farve-orange);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--farve-hvid);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.ophold-hero-knap:active {
+  transform: scale(0.97);
+}
+
+.ophold-hero-knap:focus-visible {
+  outline: 0.18rem solid var(--farve-hvid);
+  outline-offset: 0.25rem;
+}
+
+/* OPHOLD MENU */
+
+.ophold-menu {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--farve-baggrund);
+}
+
+.ophold-menu-indhold {
+  display: flex;
+  /* På mobil kan menuen swipe vandret, fordi alle links ikke kan være på én linje. */
+  gap: 1.6rem;
+  overflow-x: auto;
+  padding: 1.7rem 0 1rem;
+  border-bottom: 0.1rem solid var(--farve-moerk);
+  white-space: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ophold-menu-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  font-size: var(--tekst-normal);
+  text-decoration: none;
+}
+
+.ophold-menu-link.aktiv {
+  color: var(--farve-orange);
+}
+
+.ophold-menu-link.aktiv::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 999px;
+  background-color: var(--farve-orange);
+}
+
+#oversigt,
+#priser,
+#destinationer,
+#program,
+#inkluderet,
+#fag,
+#kontakt {
+  scroll-margin-top: 7rem;
+}
+
+/* OVERSIGT */
+
+.ophold-oversigt {
+  padding: 3rem 0 2rem;
+}
+
+.ophold-oversigt-indhold {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.ophold-oversigt-overskrift,
+.ophold-oversigt-billeder {
+  display: none;
+}
+
+.rejseplan-overskrift {
+  margin-bottom: 1.2rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.05;
+}
+
+.rejseplan-liste {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rejseplan-liste li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: var(--tekst-normal);
+  line-height: 1.45;
+}
+
+/* Mask gør SVG-ikonet til en farvet form, så jeg kan styre farven med background-color. */
+.rejseplan-liste li::before,
+.inkluderet-liste li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--farve-orange);
+  mask: url("../icons/check-solid-full.svg") center / contain no-repeat;
+  -webkit-mask: url("../icons/check-solid-full.svg") center / contain no-repeat;
+}
+
+.rejseplan-liste li::before {
+  top: 0.25rem;
+}
+
+.rejseplan-liste strong {
+  font-weight: 800;
+}
+
+/* HØJDEPUNKTER */
+
+.hojdepunkter-sektion {
+  padding: 3rem 0 2rem;
+}
+
+.hojdepunkter-indhold {
+  text-align: left;
+}
+
+.hojdepunkter-header {
+  max-width: 47rem;
+  margin: 0 auto;
+}
+
+.hojdepunkter-overskrift {
+  margin-bottom: 1.7rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1;
+}
+
+.hojdepunkter-tekst {
+  max-width: 42rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.hojdepunkter-liste {
+  display: flex;
+  /* scroll-snap hjælper kortene med at lande pænt, når brugeren swiper. */
+  gap: 2.4rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 4.5rem 1rem 1rem;
+  margin: 0 -1rem;
+}
+
+.hojdepunkt-boble {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--afstand-s);
+  min-width: 6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  scroll-snap-align: center;
+}
+
+.hojdepunkt-billede {
+  display: block;
+  width: 8.6rem;
+  height: 8.6rem;
+  padding: 0.28rem;
+  border: 0.28rem solid var(--farve-orange);
+  border-radius: 50%;
+  background: var(--farve-hvid);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hojdepunkt-billede img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hojdepunkt-navn {
+  font-size: var(--tekst-normal);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* PRISER OG AFGANGE */
+
+.priser-sektion {
+  padding: 4.5rem 0 5rem;
+  scroll-margin-top: 9rem;
+}
+
+.priser-header {
+  max-width: 45rem;
+  margin: 0 auto 3rem;
+}
+
+.priser-overskrift {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  text-align: left;
+}
+
+.priser-tekst {
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+.priser-info {
+  display: grid;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.priser-info-punkt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  align-items: center;
+  column-gap: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.priser-kontakt-link {
+  text-decoration: none;
+}
+
+.tooltip-knap {
+  width: 1.45rem;
+  height: 1.45rem;
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.15rem solid var(--farve-orange);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--farve-orange);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tooltip-knap-lille {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.25rem;
+  border-width: 0.08rem;
+  font-size: 0.6rem;
+  vertical-align: middle;
+}
+
+.kontakt-ikon {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: var(--farve-orange);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.priser-info .kontakt-ikon {
+  justify-self: center;
+  -webkit-mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
+  mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
+}
+
+.tooltip-boks {
+  position: absolute;
+  /* min gør boksen fleksibel, så den ikke bliver bredere end mobilskærmen. */
+  left: 0;
+  top: calc(100% + 0.7rem);
+  z-index: 5;
+  width: min(18rem, 80vw);
+  padding: var(--afstand-s);
+  border-radius: 0.9rem;
+  background: var(--farve-hvid);
+  box-shadow: 0 0.6rem 1.4rem rgba(34, 34, 34, 0.504);
+  font-size: var(--tekst-lille);
+  font-weight: 400;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.35rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip-boks.aktiv {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.afgange-gruppe {
+  margin-top: 3.5rem;
+}
+
+.afgange-maaned {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.afgange-overskrift {
+  display: none;
+}
+
+.afgang-kort {
+  display: grid;
+  gap: 1.4rem;
+  padding: 1rem;
+  margin-bottom: var(--afstand-l);
+  border-radius: 0.8rem;
+  background: var(--farve-hvid);
+  color: var(--farve-moerk);
+}
+
+.afgang-ophold {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.afgang-billede {
+  display: block;
+  width: 8.5rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.55rem;
+}
+
+.afgang-tekst {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.afgang-titel {
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.afgang-status {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.afgang-status span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--farve-groen);
+}
+
+.afgang-data {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--afstand-s);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.afgang-handlinger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.afgang-handlinger .knap {
+  justify-content: center;
+  text-align: center;
+}
+
+/* DESTINATIONER */
+
+.destinationer-sektion {
+  padding: 4rem 0 5rem;
+  scroll-margin-top: 8rem;
+}
+
+.destinationer-label,
+.program-label,
+.kontakt-label {
+  text-transform: uppercase;
+}
+
+.destinationer-label {
+  margin-bottom: 1.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.destinationer-overskrift {
+  margin-bottom: 1.8rem;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 1;
+}
+
+.destinationer-liste {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.destination-kort {
+  overflow: hidden;
+  border-radius: 0.7rem;
+  background-color: var(--farve-hvid);
+}
+
+.destination-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--afstand-s);
+  width: 100%;
+  padding: var(--afstand-s);
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+button.destination-top {
+  cursor: pointer;
+}
+
+.destination-navn {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.15;
+}
+
+.destination-symbol {
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.destination-panel {
+  display: grid;
+  gap: var(--afstand-m);
+  padding: 0 1rem 1rem;
+}
+
+.destination-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+}
+
+.destination-info-punkt p,
+.destination-info-punkt span,
+.destination-tekst p,
+.program-tekst {
+  margin: 0;
+}
+
+.destination-info-punkt p {
+  margin-bottom: 0.1rem;
+  font-size: 0.8rem;
+}
+
+.destination-info-punkt span {
+  display: block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.15;
+}
+
+.destination-tekst {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.destination-tekst p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.destination-billede-wrap {
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+
+.destination-billede {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.destination-kort-lukket .destination-top {
+  padding: var(--afstand-s);
+}
+
+.destination-kort-lukket .destination-navn {
+  font-size: 0.85rem;
+}
+
+.destination-kort-aaben.er-lukket .destination-panel {
+  display: none;
+}
+
+.destination-kort-aaben.er-lukket .destination-symbol {
+  font-size: 1.15rem;
+}
+
+/* PROGRAM */
+
+.program-sektion {
+  padding: 4rem 0 5rem;
+  scroll-margin-top: 8rem;
+}
+
+.program-label {
+  margin-bottom: 1.3rem;
+  font-weight: 700;
+  font-size: var(--tekst-lille);
+}
+
+.program-intro {
+  max-width: 42rem;
+}
+
+.program-overskrift {
+  margin-bottom: var(--afstand-s);
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 1;
+}
+
+.program-tekst {
+  font-size: var(--tekst-normal);
+  line-height: 1.45;
+}
+
+.program-tidsplan {
+  display: grid;
+  margin-top: 3.5rem;
+}
+
+.program-række {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: var(--afstand-s);
+  padding: 1.25rem 0;
+  border-bottom: 0.1rem dashed var(--farve-orange);
+}
+
+.program-række:first-child {
+  padding-top: 0;
+}
+
+.program-tid,
+.program-aktivitet {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--tekst-normal);
+  line-height: 1.25;
+}
+
+.program-aktivitet {
+  text-align: right;
+}
+
+.program-rejsebreve {
+  margin-top: 3.5rem;
+}
+
+.program-rejsebreve-overskrift {
+  max-width: 42rem;
+  margin: 0 0 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.program-rejsebreve-liste {
+  display: flex;
+  gap: var(--afstand-s);
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.program-rejsebrev-kort {
+  flex: 0 0 15.5rem;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  background-color: var(--farve-hvid);
+  text-decoration: none;
+}
+
+.program-rejsebrev-billede {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 0.7;
+  object-fit: cover;
+}
+
+.program-rejsebrev-indhold {
+  padding: 1.2rem 1.2rem 1.4rem;
+}
+
+.program-rejsebrev-indhold p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+/* INKLUDERET */
+
+.inkluderet-sektion {
+  padding: 4.5rem 0 5.5rem;
+  overflow: hidden;
+  scroll-margin-top: 9rem;
+}
+
+.inkluderet-label,
+.fag-label,
+.andre-rejser-label {
+  font-size: var(--tekst-lille);
+  font-weight: 700;
+}
+
+.inkluderet-label {
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.inkluderet-overskrift {
+  max-width: 32rem;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 0.9;
+}
+
+.inkluderet-slider {
+  position: relative;
+}
+
+.inkluderet-prikker,
+.fag-prikker {
+  display: flex;
+  justify-content: center;
+}
+
+.inkluderet-prikker {
+  gap: 0.8rem;
+  padding-top: var(--afstand-l);
+  padding-bottom: var(--afstand-s);
+}
+
+.inkluderet-prik,
+.fag-prik {
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.inkluderet-prik {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--farve-moerk);
+  opacity: 0.25;
+}
+
+.inkluderet-prik.aktiv {
+  opacity: 1;
+}
+
+.inkluderet-spor {
+  display: flex;
+  gap: 1.2rem;
+  margin-right: -2rem;
+  padding-right: var(--afstand-l);
+  padding-bottom: 2.4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.inkluderet-kort {
+  flex: 0 0 min(25rem, 82vw);
+  align-self: flex-start;
+  padding: 2rem 1.5rem;
+  border-radius: 1.6rem;
+  scroll-snap-align: start;
+}
+
+.inkluderet-kort-groen {
+  background: var(--farve-groen-transparent);
+}
+
+.inkluderet-kort-hvid {
+  background: var(--farve-hvid);
+}
+
+.inkluderet-kort-titel {
+  margin-bottom: 1.6rem;
+  font-size: var(--tekst-normal);
+  line-height: 0.3;
+}
+
+.inkluderet-underoverskrift {
+  margin: 2.8rem 0 1.4rem;
+  font-size: var(--tekst-normal);
+  line-height: 1.15;
+}
+
+.inkluderet-destination-label {
+  margin-top: -0.8rem;
+  margin-bottom: var(--afstand-s);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.inkluderet-liste {
+  display: grid;
+  gap: 1.05rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inkluderet-liste li {
+  position: relative;
+  padding-left: var(--afstand-l);
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.inkluderet-liste-ikke li::before {
+  width: 1.2rem;
+  height: 1.2rem;
+  mask: url("../icons/xmark-solid-full.svg") center / contain no-repeat;
+  -webkit-mask: url("../icons/xmark-solid-full.svg") center / contain no-repeat;
+}
+
+.inkluderet-kontrol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inkluderet-pile {
+  display: none;
+}
+
+/* FAG */
+
+.fag-sektion {
+  padding: 4.5rem 0 5.5rem;
+  overflow: hidden;
+  scroll-margin-top: 9rem;
+}
+
+.fag-label {
+  margin-bottom: 0.5rem;
+}
+
+.fag-overskrift {
+  max-width: 34rem;
+  margin-bottom: var(--afstand-l);
+  font-size: clamp(2.2rem, 10vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.fag-slider {
+  overflow: visible;
+}
+
+.fag-spor {
+  display: flex;
+  gap: var(--afstand-m);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.fag-kort {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  background: var(--farve-hvid);
+  scroll-snap-align: center;
+}
+
+.fag-tekst {
+  padding: 2rem 1.8rem 1.5rem;
+}
+
+.fag-tekst h3 {
+  margin-bottom: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.fag-tekst p,
+.fag-tekst li {
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.fag-udbytte {
+  margin-top: var(--afstand-l);
+}
+
+.fag-udbytte p {
+  margin-bottom: 0.3rem;
+}
+
+.fag-udbytte ul {
+  padding-left: 1.2rem;
+}
+
+.fag-billede {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.fag-prikker {
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.fag-prik {
+  width: 0.65rem;
+  height: 0.65rem;
+  background: rgba(34, 34, 34, 0.25);
+}
+
+.fag-prik.aktiv {
+  background: var(--farve-moerk);
+}
+
+/* KONTAKT */
+
+.kontakt-sektion {
+  padding: 4.5rem 0 5.5rem;
+  scroll-margin-top: 9rem;
+}
+
+.kontakt-indhold,
+.kontakt-tekst {
+  display: flex;
+  flex-direction: column;
+}
+
+.kontakt-indhold {
+  gap: 2.5rem;
+}
+
+.kontakt-tekst {
+  align-items: flex-start;
+}
+
+.kontakt-label {
+  margin-bottom: 0.5rem;
+  font-size: var(--tekst-lille);
+  font-weight: 700;
+}
+
+.kontakt-overskrift {
+  margin-bottom: 1.4rem;
+  font-size: clamp(2.2rem, 9vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.kontakt-tekst p {
+  max-width: 36rem;
+  margin-bottom: var(--afstand-m);
+  font-size: var(--tekst-normal);
+  line-height: 1.35;
+}
+
+.kontakt-links {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.4rem 0 1.7rem;
+}
+
+.kontakt-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--tekst-normal);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.kontakt-ikon-telefon {
+  mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
+  -webkit-mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
+}
+
+.kontakt-ikon-mail {
+  mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
+  -webkit-mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
+}
+
+.kontakt-person {
+  display: none;
+}
+
+.kontakt-knap {
+  width: 100%;
+  max-width: 22rem;
+  margin-top: var(--afstand-l);
+  margin-bottom: 0;
+  padding: 1rem 1.4rem;
+  text-align: center;
+}
+
+.kontakt-billede-wrap {
+  position: relative;
+  width: min(100%, 25rem);
+  margin-inline: auto;
+}
+
+.kontakt-billede {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.15rem;
+}
+
+.kontakt-stempel {
+  position: absolute;
+  top: -1.5rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: var(--farve-orange);
+  color: var(--farve-hvid);
+  font-size: 0.62rem;
+  line-height: 1;
+  text-align: center;
+  transform: rotate(18deg);
+}
+
+.kontakt-stempel-ikon {
+  font-size: 2.5rem;
+  line-height: 0.6;
+}
+
+/* ANDRE REJSER */
+
+.andre-rejser-top {
+  margin-bottom: 1.8rem;
+}
+
+.andre-rejser-label {
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.andre-rejser-overskrift {
+  max-width: 38rem;
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.andre-rejser-knap-wrapper {
+  display: flex;
+  justify-content: left;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+  .ophold-hero {
+    min-height: 44rem;
+    background-position: center 45%;
+  }
+
+  .ophold-hero-indhold {
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
+
+  .ophold-hero-overskrift {
+    max-width: 58rem;
+    margin-bottom: 1.8rem;
+    font-size: clamp(4rem, 5.5vw, 6rem);
+  }
+
+  .ophold-hero-info {
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .ophold-hero-info p {
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .ophold-hero-knap:hover {
+    transform: translateY(-0.18rem);
+    background-color: var(--farve-hvid);
+    color: var(--farve-orange);
+    border-color: var(--farve-orange);
+    outline: none;
+    box-shadow: none;
+  }
+
+  .ophold-menu-indhold {
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 4rem);
+    overflow-x: visible;
+    padding: 2rem 0 1.2rem;
+    border-bottom: none;
+    white-space: normal;
+  }
+
+  .ophold-menu-link {
+    flex: initial;
+    padding-bottom: 0;
+  }
+
+  .ophold-menu-link.aktiv::after {
+    bottom: -0.5rem;
+    height: 0.15rem;
+    border-radius: 0;
+  }
+
+  #oversigt,
+  #priser,
+  #destinationer,
+  #program,
+  #inkluderet,
+  #fag,
+  #kontakt {
+    scroll-margin-top: 9rem;
+  }
+
+  .ophold-oversigt {
+    padding: 2rem 0 2rem;
+  }
+
+  .ophold-oversigt-indhold {
+    grid-template-columns: minmax(0, 1fr) minmax(26rem, 40rem);
+    align-items: start;
+    gap: clamp(4rem, 8vw, 8rem);
+  }
+
+  .ophold-oversigt-overskrift {
+    display: block;
+    max-width: 39rem;
+    margin-bottom: var(--afstand-m);
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .rejseplan-overskrift {
+    margin-bottom: var(--afstand-s);
+    font-family: var(--font-broedtekst);
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  .rejseplan-liste {
+    gap: 0.8rem;
+    max-width: 38rem;
+  }
+
+  .rejseplan-liste li {
+    padding-left: 1.6rem;
+    font-size: 0.95rem;
+  }
+
+  .rejseplan-liste li::before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .ophold-oversigt-billeder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--afstand-m);
+    padding-top: 3rem;
+  }
+
+  .ophold-billede-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .ophold-billede {
+    display: block;
+    width: 100%;
+    height: 29rem;
+    object-fit: cover;
+  }
+
+  .ophold-billede-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .ophold-billede-wrap-venstre::after {
+    background: linear-gradient(to right, var(--farve-baggrund), transparent 15%);
+  }
+
+  .ophold-billede-wrap-hoejre::after {
+    background: linear-gradient(to left, var(--farve-baggrund), transparent 15%);
+  }
+
+  .hojdepunkter-sektion {
+    padding: 3rem 0 2rem;
+  }
+
+  .hojdepunkter-header {
+    margin: 0;
+  }
+
+  .hojdepunkter-overskrift {
+    margin-bottom: 1.8rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+
+  .hojdepunkter-liste {
+    justify-content: center;
+    gap: clamp(2.5rem, 4vw, 4.5rem);
+    overflow: visible;
+    padding: 4.2rem 0 0;
+    margin: 0;
+  }
+
+  .hojdepunkt-boble {
+    min-width: 8.8rem;
+  }
+
+  .hojdepunkt-billede {
+    width: 8.5rem;
+  }
+
+  .hojdepunkt-navn {
+    font-size: 1.25rem;
+  }
+
+  .priser-sektion {
+    padding: 7rem 0;
+  }
+
+  .priser-header {
+    max-width: 62rem;
+    margin: 0 0 4rem;
+  }
+
+  .priser-overskrift {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+
+  .priser-info {
+    grid-template-columns: max-content max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--afstand-l);
+    margin-bottom: 4.5rem;
+  }
+
+  .priser-info-punkt {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .priser-info-punkt:hover .tooltip-boks,
+  .priser-info-punkt:focus-within .tooltip-boks {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .priser-info-punkt .tooltip-boks,
+  .tooltip-boks {
+    left: 50%;
+    transform: translate(-50%, -0.35rem);
+  }
+
+  .tooltip-boks.aktiv {
+    transform: translate(-50%, 0);
+  }
+
+  .afgange-gruppe {
+    margin-top: 3rem;
+  }
+
+  .afgange-maaned {
+    margin-bottom: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .afgange-overskrift {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: var(--farve-moerk);
+    font-weight: 700;
+  }
+
+  .afgang-kort {
+    grid-template-columns: 3.2fr 1.25fr 1.25fr 1.25fr 1.25fr 1.8fr;
+    gap: var(--afstand-l);
+    align-items: center;
+    min-height: 7.7rem;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+  }
+
+  .afgang-ophold {
+    grid-template-columns: 7.7rem 1fr;
+    gap: 1.6rem;
+    align-self: stretch;
+  }
+
+  .afgang-billede {
+    width: 7.7rem;
+    height: 100%;
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+
+  .afgang-tekst {
+    align-content: center;
+  }
+
+  .afgang-titel {
+    max-width: 19rem;
+    font-size: 1.15rem;
+  }
+
+  .afgang-status {
+    font-size: 0.8rem;
+  }
+
+  .afgang-data {
+    display: block;
+    font-size: var(--tekst-normal);
+  }
+
+.afgang-data span {
+  display: none;
+}
+
+.afgang-handlinger {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0;
+  padding-right: 1.4rem;
+}
+
+.afgang-reserver,
+.afgang-tilmeld {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.afgang-reserver {
+  order: 1;
+}
+
+.afgang-tilmeld {
+  order: 2;
+}
+
+  .destinationer-sektion {
+    padding: 2rem 0 4rem;
+    scroll-margin-top: 9rem;
+  }
+
+  .destinationer-label,
+  .destinationer-overskrift {
+    margin-bottom: var(--afstand-l);
+  }
+
+  .destinationer-liste {
+    gap: var(--afstand-s);
+  }
+
+  .destination-kort {
+    border-radius: 0.9rem;
+  }
+
+  .destination-top {
+    padding: 1.8rem 2rem 1.2rem;
+  }
+
+  .destination-navn {
+    font-size: 1.15rem;
+  }
+
+  .destination-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 31rem);
+    align-items: center;
+    gap: clamp(3rem, 6vw, 6rem);
+    padding: 0 2rem 2rem;
+  }
+
+  .destination-info {
+    max-width: 35rem;
+    gap: 1.8rem;
+  }
+
+  .destination-info-punkt span {
+    font-size: var(--tekst-lille);
+  }
+
+  .destination-tekst {
+    gap: var(--afstand-s);
+  }
+
+  .destination-tekst p {
+    max-width: 42rem;
+    font-size: 0.92rem;
+  }
+
+  .destination-billede {
+    aspect-ratio: 12 / 9;
+  }
+
+  .destination-kort-lukket .destination-top {
+    padding: 1.8rem 2rem;
+  }
+
+  .destination-kort-lukket .destination-navn {
+    font-size: 1.1rem;
+  }
+
+  .program-sektion {
+    padding: 5rem 0 6rem;
+    scroll-margin-top: 9rem;
+  }
+
+  .program-label {
+    margin-bottom: var(--afstand-m);
+  }
+
+  .program-intro {
+    max-width: 48rem;
+  }
+
+  .program-overskrift {
+    margin-bottom: 0.8rem;
+  }
+
+  .program-tekst {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .program-tidsplan {
+    max-width: 69rem;
+    margin: 3.4rem auto 0;
+  }
+
+  .program-række {
+    grid-template-columns: 18rem 1fr;
+    padding: 1.4rem 0;
+  }
+
+  .program-tid,
+  .program-aktivitet {
+    font-size: 1.15rem;
+  }
+
+  .program-aktivitet {
+    max-width: 59rem;
+    justify-self: end;
+  }
+
+  .program-rejsebreve {
+    margin-top: 5rem;
+  }
+
+  .program-rejsebreve-overskrift {
+    max-width: 60rem;
+    margin-bottom: 1.6rem;
+    font-size: 2rem;
+  }
+
+  .program-rejsebreve-liste {
+    gap: var(--afstand-m);
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .program-rejsebrev-kort {
+    flex: 0 0 20rem;
+  }
+
+  .program-rejsebrev-kort:hover {
+    transform: translateY(-0.15rem);
+    box-shadow: 0 0.8rem 1.4rem rgba(34, 34, 34, 0.16);
+  }
+
+  .program-rejsebrev-indhold {
+    padding: 1.3rem 1.4rem 1.5rem;
+  }
+
+  .program-rejsebrev-indhold p {
+    font-size: 1.15rem;
+  }
+
+  .inkluderet-sektion {
+    /* max og calc giver slideren luft i siderne på store skærme uden at låse layoutet. */
+    --inkluderet-side-luft: max(8rem, calc((100vw - 120rem) / 2 + 2rem));
+    padding: 4.5rem 0 5.5rem;
+  }
+
+  .inkluderet-overskrift {
+    max-width: 49rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .inkluderet-slider {
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    overflow: visible;
+  }
+
+  .inkluderet-prikker {
+    margin-bottom: 2.2rem;
+  }
+
+  .inkluderet-prik {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .inkluderet-spor {
+    gap: 1.4rem;
+    width: 100vw;
+    margin-right: 0;
+    padding-left: var(--inkluderet-side-luft);
+    padding-right: var(--inkluderet-side-luft);
+    padding-bottom: 2.8rem;
+    scroll-padding-left: var(--inkluderet-side-luft);
+  }
+
+  .inkluderet-spor::before {
+    display: none;
+    content: none;
+  }
+
+  .inkluderet-kort {
+    flex: 0 0 min(29rem, 80vw);
+    padding: var(--afstand-l);
+  }
+
+  .inkluderet-kort-titel {
+    font-size: 1.1rem;
+  }
+
+  .inkluderet-destination-label {
+    margin-bottom: 0.8rem;
+  }
+
+  .inkluderet-liste li {
+    padding-left: 1.3rem;
+  }
+
+  .inkluderet-liste li::before {
+    top: 0;
+  }
+
+  .inkluderet-liste-ikke li::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .fag-sektion {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .fag-overskrift {
+    max-width: none;
+    margin-bottom: 1.8rem;
+    font-size: clamp(2.8rem, 3.4vw, 3.6rem);
+    white-space: nowrap;
+  }
+
+  .fag-spor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .fag-kort {
+    flex: initial;
+    min-width: 0;
+    height: 26.5rem;
+    scroll-snap-align: none;
+  }
+
+  .fag-tekst {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .fag-tekst h3 {
+    margin-bottom: var(--afstand-s);
+    font-size: 1.1rem;
+  }
+
+  .fag-tekst p,
+  .fag-tekst li {
+    font-size: 0.82rem;
+    line-height: 1.28;
+  }
+
+  .fag-udbytte {
+    margin-top: 1.4rem;
+  }
+
+  .fag-billede {
+    height: 11.9rem;
+  }
+
+  .fag-prikker {
+    display: none;
+  }
+
+  .kontakt-sektion {
+    padding: 5.5rem 0 6rem;
+  }
+
+  .kontakt-indhold {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .kontakt-overskrift {
+    margin-bottom: 1.2rem;
+    font-size: clamp(3rem, 4vw, 4rem);
+  }
+
+  .kontakt-tekst p {
+    max-width: 37rem;
+    font-size: var(--tekst-lille);
+  }
+
+  .kontakt-links {
+    margin: 0.8rem 0 1.8rem;
+  }
+
+  .kontakt-person {
+    display: block;
+    margin: 1rem 0 1.6rem;
+  }
+
+  .kontakt-person p {
+    margin-bottom: 0;
+  }
+
+  .kontakt-navn {
+    font-weight: 800;
+  }
+
+  .kontakt-knap {
+    margin-top: 0;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .kontakt-billede-wrap {
+    width: 100%;
+    max-width: 32rem;
+    margin-inline: 0;
+  }
+
+  .kontakt-billede {
+    height: 31rem;
+    aspect-ratio: auto;
+  }
+
+  .kontakt-stempel {
+    top: 10%;
+    right: -1.5rem;
+    width: 12rem;
+    height: 12rem;
+    font-size: 1rem;
+    transform: translateY(-50%) rotate(18deg);
+  }
+
+  .kontakt-stempel-ikon {
+    font-size: 5rem;
+  }
+
+  .andre-rejser-sektion {
+    padding: 5.5rem 0 6rem;
+  }
+
+  .andre-rejser-top {
+    margin-bottom: var(--afstand-l);
+  }
+
+  .andre-rejser-overskrift {
+    max-width: 52rem;
+    font-size: 3.2rem;
+  }
+
+  .andre-rejser-knap-wrapper {
+    margin-top: 3rem;
+  }
+
+  .rejseinspiration-kort:hover {
+    transform: translateY(-0.45rem) rotate(-0.5deg);
+    box-shadow: 0 1.4rem 2.4rem rgba(34, 34, 34, 0.404);
+  }
+
+  .rejseinspiration-kort:hover .rejseinspiration-billede {
+    transform: scale(1);
+  }
+
+  .rejseinspiration-kort:hover::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .rejseinspiration-kort:hover .rejseinspiration-link span {
+    transform: translateX(0.2rem);
+  }
+}

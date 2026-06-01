@@ -1,0 +1,393 @@
+/* 
+Denne fil styrer den fælles header på websitet.
+
+Headeren er bygget mobile-first. På mobil vises burger-menuen, og navigationen
+åbner som en fuldskærmsmenu med clip-path. På desktop fjernes burger-menuen,
+og navigationen vises der som en almindelig vandret menu.
+
+Ikonerne i toplinjen bliver sat ind med CSS mask. Det betyder, at jeg kan bruge
+SVG-filer som former og farve dem med background-color i CSS. Det giver færre
+billeder i HTML'en og gør ikonerne lettere at styre.
+*/
+
+
+/* TOPLINJE */
+
+.toplinje {
+    position: relative;
+    z-index: 20;
+    padding-block: var(--afstand-xs);
+    background-color: var(--farve-baggrund);
+}
+
+.toplinje-indhold,
+.toplinje-info,
+.toplinje-punkt,
+.toplinje-hjaelp,
+.toplinje-social-link {
+    display: flex;
+    align-items: center;
+}
+
+.toplinje-indhold,
+.toplinje-info {
+    justify-content: center;
+}
+
+.toplinje-sociale,
+.toplinje-hjaelp,
+.toplinje-punkt-desktop {
+    display: none;
+}
+
+.toplinje-punkt,
+.toplinje-hjaelp {
+    gap: 0.45rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+/* TOPLINJE-IKONER */
+
+/* 
+Jeg bruger --ikon som en lille lokal variabel.
+Hver ikon-class skifter kun selve SVG-filen, mens størrelse og farve styres samlet.
+*/
+
+.toplinje-ikon {
+    flex: 0 0 auto;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--farve-orange);
+    -webkit-mask: var(--ikon) center / contain no-repeat;
+    mask: var(--ikon) center / contain no-repeat;
+}
+
+.toplinje-social-link .toplinje-ikon {
+    background-color: var(--farve-moerk);
+}
+
+.toplinje-ikon-check {
+    --ikon: url("../icons/check-solid-full.svg");
+}
+
+.toplinje-ikon-fly {
+    --ikon: url("../icons/plane-solid-full.svg");
+}
+
+.toplinje-ikon-skjold {
+    --ikon: url("../icons/shield-solid-full.svg");
+}
+
+.toplinje-ikon-hjaelp {
+    --ikon: url("../icons/life-ring-solid-full.svg");
+}
+
+.toplinje-ikon-tiktok {
+    --ikon: url("../icons/tiktok-brands-solid-full.svg");
+}
+
+.toplinje-ikon-instagram {
+    --ikon: url("../icons/instagram-brands-solid-full.svg");
+}
+
+.toplinje-ikon-facebook {
+    --ikon: url("../icons/facebook-f-brands-solid-full.svg");
+}
+
+
+/* HEADER */
+
+.side-header {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--afstand-m) var(--side-padding);
+}
+
+.logo {
+    position: relative;
+    z-index: 40;
+    display: inline-block;
+    color: var(--farve-hvid);
+    font-family: var(--font-overskrift);
+    font-size: 1.9rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transform: rotate(-3deg);
+}
+
+
+/* BURGER */
+
+/* 
+Burger-knappen ligger over mobilmenuen med z-index.
+Når knappen får classen .er-aaben, bliver de tre linjer lavet om til et kryds.
+*/
+
+.menu-knap {
+    position: relative;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.6rem;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.menu-linje {
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    border-radius: 999px;
+    background-color: var(--farve-hvid);
+    transform-origin: center;
+    transition: transform 0.35s ease, opacity 0.2s ease;
+}
+
+.menu-knap.er-aaben .menu-linje:nth-child(1) {
+    transform: translateY(0.7rem) rotate(45deg);
+}
+
+.menu-knap.er-aaben .menu-linje:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-knap.er-aaben .menu-linje:nth-child(3) {
+    transform: translateY(-0.7rem) rotate(-45deg);
+}
+
+
+/* MOBILNAVIGATION */
+
+/* 
+Mobilmenuen er fixed, så den dækker hele skærmen.
+Clip-path starter som en lille cirkel og udvider sig, når navigationen får .er-aaben.
+Pointer-events er slået fra, når menuen er lukket, så den ikke blokerer siden.
+*/
+
+.navigation {
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--farve-moerk);
+    clip-path: circle(0% at calc(100% - 2.5rem) 6.5rem);
+    pointer-events: none;
+    transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.navigation.er-aaben {
+    clip-path: circle(150% at calc(100% - 2.5rem) 6.5rem);
+    pointer-events: auto;
+}
+
+.navigation-liste,
+.navigation-dropdown {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.navigation-liste {
+    gap: var(--afstand-m);
+    text-align: center;
+}
+
+.navigation-punkt {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.navigation.er-aaben .navigation-punkt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navigation-link,
+.navigation-dropdown-knap,
+.navigation-dropdown-link {
+    color: var(--farve-hvid);
+    font-family: var(--font-overskrift);
+    text-decoration: none;
+}
+
+.navigation-link,
+.navigation-dropdown-knap {
+    font-size: var(--tekst-sektion);
+}
+
+.navigation-dropdown-knap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--afstand-xs);
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.navigation-dropdown-ikon {
+    width: 2rem;
+    height: 2rem;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.navigation-punkt-dropdown.er-aaben .navigation-dropdown-ikon {
+    transform: rotate(180deg);
+}
+
+
+/* DROPDOWN */
+
+/* 
+Dropdownen er lukket med max-height: 0 på mobil.
+Når punktet får .er-aaben, får dropdownen højde og bliver synlig.
+*/
+
+.navigation-dropdown {
+    max-height: 0;
+    gap: var(--afstand-s);
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.navigation-punkt-dropdown.er-aaben .navigation-dropdown {
+    max-height: 10rem;
+    margin-top: var(--afstand-s);
+}
+
+.navigation-dropdown-link {
+    display: inline-block;
+    font-size: var(--tekst-mellem);
+    opacity: 0.8;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+    .toplinje {
+        padding-block: var(--afstand-s);
+    }
+
+    .toplinje-indhold {
+        justify-content: space-between;
+        gap: var(--afstand-m);
+    }
+
+    .toplinje-sociale,
+    .toplinje-hjaelp,
+    .toplinje-punkt-desktop {
+        display: flex;
+    }
+
+    .toplinje-sociale,
+    .toplinje-info {
+        gap: var(--afstand-m);
+    }
+
+    .toplinje-ikon {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    .toplinje-social-link .toplinje-ikon {
+        width: 1.55rem;
+        height: 1.55rem;
+    }
+
+    .side-header {
+        top: 4.5rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .menu-knap {
+        display: none;
+    }
+
+    .navigation {
+        position: static;
+        display: block;
+        background-color: transparent;
+        clip-path: none;
+        pointer-events: auto;
+        transition: none;
+    }
+
+    .navigation-liste {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--afstand-m);
+        text-align: left;
+    }
+
+    .navigation-punkt {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .navigation-link,
+    .navigation-dropdown-knap {
+        font-family: var(--font-broedtekst);
+        font-size: var(--tekst-normal);
+        font-weight: 700;
+    }
+
+    .navigation-dropdown-ikon {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    .navigation-dropdown {
+        position: absolute;
+        top: calc(100% + 1rem);
+        left: 0;
+        display: none;
+        min-width: 7rem;
+        max-height: none;
+        gap: 0;
+        border-radius: var(--radius);
+        background-color: var(--farve-hvid);
+        box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.367);
+    }
+
+    .navigation-punkt-dropdown.er-aaben .navigation-dropdown {
+        display: flex;
+        margin-top: 0;
+    }
+
+    .navigation-dropdown-link {
+        display: block;
+        width: 100%;
+        padding: 1.5rem;
+        color: var(--farve-moerk);
+        font-family: var(--font-broedtekst);
+        font-size: var(--tekst-lille);
+        font-weight: 600;
+        opacity: 1;
+        white-space: nowrap;
+    }
+
+    .navigation-dropdown-link:hover {
+        background-color: var(--farve-groen-transparent);
+    }
+}

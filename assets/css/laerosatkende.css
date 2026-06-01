@@ -1,0 +1,884 @@
+/* SIDE-SPECIFIK HEADER */
+
+.side-laer-os-at-kende {
+  color: var(--farve-moerk);
+  background-color: var(--farve-baggrund);
+  font-family: var(--font-broedtekst);
+}
+
+.side-laer-os-at-kende .toplinje,
+.side-laer-os-at-kende .side-header {
+  background-color: var(--farve-baggrund);
+}
+
+.side-laer-os-at-kende .toplinje-social-link,
+.side-laer-os-at-kende .toplinje-punkt,
+.side-laer-os-at-kende .toplinje-hjaelp {
+  color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .toplinje-punkt .toplinje-ikon,
+.side-laer-os-at-kende .toplinje-hjaelp .toplinje-ikon {
+  color: var(--farve-orange);
+}
+
+.side-laer-os-at-kende .logo {
+  color: var(--farve-orange);
+}
+
+.side-laer-os-at-kende .navigation-link,
+.side-laer-os-at-kende .navigation-dropdown-knap {
+  color: #030027;
+}
+
+.side-laer-os-at-kende .navigation-dropdown-knap img {
+  filter: none;
+}
+
+.side-laer-os-at-kende .menu-linje {
+  background-color: var(--farve-moerk);
+}
+
+/* MOBILMENU */
+
+.side-laer-os-at-kende .navigation.er-aaben {
+  background-color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-link,
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap {
+  color: var(--farve-hvid);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap img {
+  filter: brightness(0) invert(1);
+}
+
+.side-laer-os-at-kende .menu-knap.er-aaben .menu-linje {
+  background-color: var(--farve-hvid);
+}
+
+/* GENERELT */
+
+.laer-hero-tekst h1,
+.kontor-overskrift,
+.kontor-navn,
+.kontor-modal-overskrift,
+.kontor-modal-navn,
+.vaerdier-header h2,
+.vaerdi-kort h3,
+.elevforening-tekst h2,
+.partner-overskrift,
+.partner-kort h3,
+.andre-rejser-overskrift {
+  font-family: var(--font-overskrift);
+}
+
+/* HERO */
+
+.laer-hero {
+  padding: 7rem 0 4rem;
+}
+
+.laer-hero-indhold {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.laer-hero-tekst h1 {
+  margin-bottom: 1.5rem;
+  color: #030027;
+  font-size: clamp(2.25rem, 7vw, 3.8rem);
+  line-height: 0.95;
+}
+
+.laer-hero-tekst p {
+  max-width: 42rem;
+  color: var(--farve-moerk);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.laer-hero-tekst p+p {
+  margin-top: 1.5rem;
+}
+
+.laer-hero-billede-wrap {
+  position: relative;
+}
+
+.laer-hero-billede {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.laer-hero-stempel {
+  position: absolute;
+  top: -2rem;
+  left: 17.5rem;
+  width: clamp(8rem, 28vw, 12rem);
+}
+
+/* PÅ KONTORET */
+
+.kontor-sektion {
+  overflow: hidden;
+  padding: 1rem 0 5rem;
+  background-color: var(--farve-baggrund);
+}
+
+.kontor-overskrift {
+  color: var(--farve-moerk);
+  font-size: clamp(2.25rem, 7vw, 3.8rem);
+  line-height: 0.3;
+}
+
+.kontor-intro {
+  max-width: 42rem;
+  margin-top: 1.4rem;
+  color: var(--farve-orange);
+  font-family: var(--font-overskrift);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.kontor-slider {
+  margin-top: 2rem;
+}
+
+.kontor-liste {
+  display: flex;
+  gap: 1.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  margin-right: calc((100vw - 100%) / -2);
+  padding-right: 1.4rem;
+}
+
+.kontor-liste::-webkit-scrollbar {
+  display: none;
+}
+
+.kontor-kort {
+  flex: 0 0 17rem;
+  max-width: calc(100vw - 4rem);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--farve-moerk);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.kontor-billede {
+  display: block;
+  width: 100%;
+  height: 18rem;
+  max-height: calc(100vw - 3rem);
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.kontor-navn {
+  display: block;
+  margin-top: 1rem;
+  color: var(--farve-moerk);
+  font-size: 1rem;
+  line-height: 1.05;
+}
+
+.kontor-rolle {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--farve-orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kontor-prikker {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 3rem;
+}
+
+.kontor-prik {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(34, 34, 34, 0.25);
+  cursor: pointer;
+}
+
+.kontor-prik.aktiv {
+  background-color: var(--farve-moerk);
+}
+
+/* POPUP */
+
+.modal-er-aaben {
+  overflow: hidden;
+}
+
+.kontor-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.kontor-modal.er-synlig {
+  display: flex;
+}
+
+.kontor-modal-baggrund {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(34, 34, 34, 0.65);
+}
+
+.kontor-modal-boks {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 58rem);
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
+  padding: 3.8rem 2.2rem 2.2rem;
+  border-radius: 1.7rem;
+  background-color: var(--farve-hvid);
+}
+
+.kontor-modal-luk {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--farve-baggrund);
+  cursor: pointer;
+}
+
+.kontor-modal-luk::before,
+.kontor-modal-luk::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background-color: var(--farve-moerk);
+}
+
+.kontor-modal-luk::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.kontor-modal-luk::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.kontor-modal-overskrift {
+  margin-bottom: 2rem;
+  color: var(--farve-moerk);
+  font-size: 1.5rem;
+  line-height: 0.95;
+}
+
+.kontor-modal-tekst {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.kontor-modal-tekst p {
+  color: rgba(34, 34, 34, 0.82);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.kontor-modal-kontakt {
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+  margin-top: 2.4rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background-color: var(--farve-baggrund);
+}
+
+.kontor-modal-billede {
+  width: 100%;
+  height: 100%;
+  min-height: 10rem;
+  object-fit: cover;
+}
+
+.kontor-modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 1.8rem 1.4rem;
+}
+
+.kontor-modal-navn {
+  color: var(--farve-moerk);
+  font-size: 1rem;
+  line-height: 1.05;
+}
+
+.kontor-modal-rolle {
+  margin-top: 0.2rem;
+  color: var(--farve-orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.kontor-modal-links {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.kontor-modal-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-wrap: anywhere;
+  color: var(--farve-orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.kontor-modal-ikon {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.kontor-modal-ikon-telefon {
+  mask-image: url("../icons/phone-solid-full.svg");
+  -webkit-mask-image: url("../icons/phone-solid-full.svg");
+}
+
+.kontor-modal-ikon-mail {
+  mask-image: url("../icons/envelope-regular-full.svg");
+  -webkit-mask-image: url("../icons/envelope-regular-full.svg");
+}
+
+/* VÆRDIER */
+
+.vaerdier-sektion {
+  overflow: hidden;
+  padding: 3rem 0 5rem;
+  color: var(--farve-hvid);
+  background-color: var(--farve-orange);
+  background-image:
+    radial-gradient(ellipse at 10% 45%, transparent 0 38%, rgba(255, 255, 255, 0.08) 39%, transparent 41%),
+    radial-gradient(ellipse at 70% 20%, transparent 0 34%, rgba(255, 255, 255, 0.07) 35%, transparent 37%),
+    radial-gradient(ellipse at 75% 85%, transparent 0 30%, rgba(255, 255, 255, 0.07) 31%, transparent 33%);
+}
+
+.vaerdier-header {
+  max-width: 46rem;
+  margin-bottom: 3.5rem;
+}
+
+.vaerdier-header h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.vaerdier-header p {
+  max-width: 37rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.vaerdier-liste {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.vaerdi-kort h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+
+.vaerdi-kort p {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* ELEVFORENING */
+
+.elevforening-sektion {
+  padding: 4.5rem 0 5rem;
+  background-color: var(--farve-baggrund);
+}
+
+.elevforening-indhold {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.elevforening-tekst h2 {
+  margin-bottom: 1.4rem;
+  color: #00002e;
+  font-size: clamp(2.4rem, 9vw, 4.2rem);
+  line-height: 1;
+}
+
+.elevforening-tekst p {
+  max-width: 38rem;
+  margin-bottom: 1.6rem;
+  color: var(--farve-moerk);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.elevforening-knap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 20rem;
+  min-height: 2rem;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--farve-orange);
+  color: var(--farve-hvid);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.elevforening-billeder {
+  position: relative;
+  width: min(100%, 20rem);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
+.elevforening-billede-foran,
+.elevforening-billede-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.elevforening-billede-foran {
+  z-index: 4;
+}
+
+.elevforening-billede-bag-et {
+  z-index: 1;
+  transform: rotate(-9deg) translate(-1.4rem, 1rem);
+}
+
+.elevforening-billede-bag-to {
+  z-index: 2;
+  transform: rotate(7deg) translate(1.3rem, 1.2rem);
+}
+
+.elevforening-billede-bag-tre {
+  z-index: 3;
+  transform: rotate(-3deg) translate(0.3rem, -1.3rem);
+}
+
+/* SAMARBEJDSPARTNERE */
+
+.partner-sektion {
+  padding: 4rem 0 4.5rem;
+  background-color: var(--farve-groen-transparent);
+}
+
+.partner-overskrift {
+  margin-bottom: 2.5rem;
+  color: var(--farve-moerk);
+  font-size: clamp(2rem, 9vw, 3.8rem);
+  line-height: 1;
+}
+
+.partner-linjeskift {
+  display: block;
+}
+
+.partner-liste {
+  display: grid;
+  gap: 3rem;
+}
+
+.partner-kort {
+  max-width: 38rem;
+}
+
+.partner-logo {
+  display: block;
+  width: auto;
+  max-width: 13rem;
+  max-height: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+.partner-logo-rakke {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.partner-logo-rakke .partner-logo {
+  max-width: 10rem;
+  margin-bottom: 0;
+}
+
+.partner-kort h3 {
+  margin-bottom: 0.7rem;
+  color: var(--farve-moerk);
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+.partner-kort p {
+  color: var(--farve-moerk);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.partner-kort p+p {
+  margin-top: 0.4rem;
+}
+
+/* ANDRE REJSER */
+
+.andre-rejser-top {
+  margin-top: 3rem;
+  margin-bottom: 1.8rem;
+}
+
+.andre-rejser-label {
+  margin-bottom: 0.6rem;
+  color: var(--farve-orange);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.andre-rejser-overskrift {
+  max-width: 38rem;
+  color: var(--farve-moerk);
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.andre-rejser-knap-wrapper {
+  display: flex;
+  justify-content: left;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+  .side-laer-os-at-kende .navigation {
+    background-color: transparent;
+  }
+
+  .side-laer-os-at-kende .navigation-link,
+  .side-laer-os-at-kende .navigation-dropdown-knap {
+    color: #030027;
+  }
+
+  .side-laer-os-at-kende .navigation-dropdown-knap img {
+    filter: none;
+  }
+
+  .laer-hero {
+    padding: 5.5rem 0 4.5rem;
+  }
+
+  .laer-hero-indhold {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(28rem, 0.8fr);
+    gap: clamp(4rem, 7vw, 8rem);
+    margin-top: 5rem;
+  }
+
+  .laer-hero-tekst h1 {
+    margin-bottom: 1.7rem;
+    font-size: clamp(2.25rem, 7vw, 3.8rem);
+  }
+
+  .laer-hero-tekst p {
+    max-width: 40rem;
+    font-size: 1.1rem;
+    line-height: 1.32;
+  }
+
+  .laer-hero-tekst p+p {
+    margin-top: 2rem;
+  }
+
+  .laer-hero-billede {
+    height: 27rem;
+    object-fit: cover;
+  }
+
+  .laer-hero-stempel {
+    top: -2.2rem;
+    left: -4.5rem;
+    width: 9rem;
+  }
+
+  .kontor-sektion {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .kontor-overskrift {
+    font-size: 3.4rem;
+  }
+
+  .kontor-intro {
+    max-width: 35rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .kontor-liste {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2.2rem 1.8rem;
+    overflow: visible;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .kontor-kort {
+    width: auto;
+    max-width: none;
+  }
+
+ .kontor-billede {
+  height: auto;
+  max-height: none;
+  aspect-ratio: 1 / 1.03;
+  border-radius: 0.7rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kontor-kort:hover .kontor-billede {
+  transform: translateY(-0.25rem) scale(1.02);
+  box-shadow: var(--skygge);
+}
+
+.kontor-kort:hover .kontor-navn {
+  color: rgb(88, 82, 82);
+}
+
+  .kontor-navn {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .kontor-rolle {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .kontor-prikker {
+    display: none;
+  }
+
+  .kontor-modal-boks {
+    width: min(100%, 40rem);
+    padding: 3rem 2rem 2rem;
+    border-radius: 1.6rem;
+  }
+
+  .kontor-modal-luk {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .kontor-modal-overskrift {
+    margin-bottom: 1rem;
+  }
+
+  .kontor-modal-tekst p {
+    line-height: 1.45;
+  }
+
+  .kontor-modal-kontakt {
+    grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
+    margin-top: 2.4rem;
+  }
+
+  .kontor-modal-info {
+    padding: 2rem;
+  }
+
+  .vaerdier-sektion {
+    padding: 4rem 0 7rem;
+  }
+
+  .vaerdier-header {
+    margin-bottom: 4rem;
+  }
+
+  .vaerdier-header p {
+    max-width: 35rem;
+    font-size: 1.1rem;
+  }
+
+  .vaerdier-liste {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 68rem;
+    margin-inline: auto;
+    column-gap: 5rem;
+    row-gap: 4.5rem;
+  }
+
+  .vaerdi-kort p {
+    font-size: 0.9rem;
+  }
+
+  .elevforening-sektion {
+    padding: 8rem 0;
+  }
+
+  .elevforening-indhold {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 6rem;
+  }
+
+  .elevforening-tekst h2 {
+    font-size: 3.4rem;
+  }
+
+  .elevforening-tekst p {
+    font-size: 1.05rem;
+  }
+
+  .elevforening-knap {
+    max-width: none;
+    padding-inline: 2rem;
+  }
+
+  .elevforening-billeder {
+    width: min(100%, 30rem);
+  }
+
+  .elevforening-billede-bag-et {
+    transform: rotate(-9deg) translate(-2rem, 1.4rem);
+  }
+
+  .elevforening-billede-bag-to {
+    transform: rotate(7deg) translate(2rem, 1.6rem);
+  }
+
+  .elevforening-billede-bag-tre {
+    transform: rotate(-3deg) translate(0.6rem, -2rem);
+  }
+
+  .partner-sektion {
+    padding: 5.5rem 0 6rem;
+  }
+
+  .partner-overskrift {
+    margin-bottom: 3.5rem;
+    font-size: 3.4rem;
+  }
+
+  .partner-linjeskift {
+    display: none;
+  }
+
+  .partner-liste {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+    row-gap: 4.5rem;
+  }
+
+  .partner-kort {
+    max-width: none;
+  }
+
+  .partner-logo {
+    height: 5rem;
+    max-width: 15rem;
+    max-height: none;
+    margin-bottom: 1.2rem;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .partner-logo-rakke {
+    gap: 1.8rem;
+    height: 5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .partner-logo-rakke .partner-logo {
+    height: 4.5rem;
+    max-width: 13rem;
+    margin-bottom: 0;
+  }
+
+  .partner-kort h3 {
+    font-size: 1.35rem;
+  }
+
+  .partner-kort p {
+    font-size: 1.05rem;
+  }
+
+  .andre-rejser-sektion {
+    padding: 3rem 0 6rem;
+  }
+
+  .andre-rejser-top {
+    margin-bottom: 2.2rem;
+  }
+
+  .andre-rejser-overskrift {
+    max-width: 62rem;
+    font-size: 3.4rem;
+  }
+
+  .andre-rejser-knap-wrapper {
+    margin-top: 3rem;
+  }
+}

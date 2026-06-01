@@ -4,12 +4,976 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/komponenter.css">
+    <link rel="stylesheet" href="./assets/css/forside.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    
     <script src="./assets/js/app.js" defer></script>
   </head>
-  <body>
-    <header>
-        <h1>TEMPLATE</h1>
-    </header>
+      <body>
+        <div class="toplinje">
+          <div class="container toplinje-indhold">
+            <div class="toplinje-sociale">
+              <a href="https://www.tiktok.com/@hojskolendk" class="toplinje-social-link" aria-label="TikTok">
+                <span class="toplinje-ikon toplinje-ikon-tiktok"></span>
+              </a>
+        
+              <a href="https://www.instagram.com/hojskolendk/" class="toplinje-social-link" aria-label="Instagram">
+                <span class="toplinje-ikon toplinje-ikon-instagram"></span>
+              </a>
+        
+              <a href="https://www.facebook.com/hojskolendk/?locale=da_DK" class="toplinje-social-link" aria-label="Facebook">
+                <span class="toplinje-ikon toplinje-ikon-facebook"></span>
+              </a>
+            </div>
+        
+            <div class="toplinje-info">
+              <p class="toplinje-punkt">
+                <span class="toplinje-ikon toplinje-ikon-check"></span>
+                4,8/5 stjerner på TrustPilot
+              </p>
+        
+              <p class="toplinje-punkt toplinje-punkt-desktop">
+                <span class="toplinje-ikon toplinje-ikon-skjold"></span>
+                Medlem af Rejsegarantifonden
+              </p>
+        
+              <p class="toplinje-punkt toplinje-punkt-desktop">
+                <span class="toplinje-ikon toplinje-ikon-fly"></span>
+                Rejser for unge siden 2010
+              </p>
+            </div>
+        
+            <a href="kontakt.html" class="toplinje-hjaelp">
+              <span class="toplinje-ikon toplinje-ikon-hjaelp"></span>
+              Brug for hjælp?
+            </a>
+          </div>
+        </div>
+
+        <header class="side-header">
+          <a href="index.html" class="logo">HØJSKOLENDK</a>
+
+          <button
+            class="menu-knap js-menu-knap"
+            aria-label="Åbn menu"
+            aria-expanded="false"
+          >
+            <span class="menu-linje"></span>
+            <span class="menu-linje"></span>
+            <span class="menu-linje"></span>
+          </button>
+
+          <nav class="navigation js-navigation">
+            <ul class="navigation-liste">
+            
+
+              <li class="navigation-punkt">
+                <a href="hojskoleophold.html" class="navigation-link"
+                  >Højskoleophold</a
+                >
+              </li>
+
+              <li class="navigation-punkt">
+                <a href="laes-os-at-kende.html" class="navigation-link"
+                  >Læs os at kende</a
+                >
+              </li>
+
+              <li class="navigation-punkt navigation-punkt-dropdown">
+                <button
+                  class="navigation-dropdown-knap js-dropdown-knap"
+                  type="button"
+                >
+                  Spørgsmål?
+                  <img
+                    src="assets/icons/angle-down-solid-full.svg"
+                    alt=""
+                    class="navigation-dropdown-ikon"
+                  />
+                </button>
+
+                <ul class="navigation-dropdown js-dropdown">
+                  <li>
+                    <a href="kontakt.html" class="navigation-dropdown-link"
+                      >Kontakt</a
+                    >
+                  </li>
+                  <li>
+                    <a href="faq.html" class="navigation-dropdown-link">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="navigation-punkt">
+                <a href="rejsebreve.html" class="navigation-link">Rejsebreve</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+              <source src="assets/video/forside-720p.mp4" type="video/mp4" />
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-indhold">
+              <h1 class="hero-titel">Dit højskole eventyr starter her</h1>
+            </div>
+          </section>
+
+          <section class="snart-ophold">
+            <div class="container">
+              <div class="snart-ophold-header">
+                <h2 class="snart-ophold-titel">
+                  Rejser snart – få pladser tilbage
+                </h2>
+              </div>
+
+              <div class="snart-ophold-liste">
+                <article class="ophold-kort">
+                  <div class="ophold-kort-billede-wrapper">
+                    <img
+                      src="assets/img/FinnsBeachclub.jpeg"
+                      alt="Elever på stranden under højskoleophold"
+                      class="ophold-kort-billede billede-fokus-midte"
+                    />
+
+                    <span class="ophold-kort-label">90 dage</span>
+                  </div>
+
+                  <div class="ophold-kort-indhold">
+                    <h3 class="ophold-kort-titel">
+                      Højskole i Maldiverne, Sri Lanka, Bali, Gili Islands,
+                      Japan & Australien
+                    </h3>
+
+                    <div class="ophold-kort-beskrivelse">
+                      <p><strong>Introdag:</strong> Dubai</p>
+                      <p><strong>Maldiverne:</strong> Dhiffushi & Fulidhoo</p>
+                      <p><strong>Sri Lanka:</strong> Ella & Kandy</p>
+                      <p>
+                        <strong>Vietnam:</strong> Hanoi, Lan Ha Bay, Ninh Binh &
+                        Mai Chau
+                      </p>
+                      <p>
+                        <strong>Indonesien:</strong> Bali, Gili Islands & Lombok
+                      </p>
+                    </div>
+                  </div>
+
+                  <dl class="ophold-kort-info">
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Status</dt>
+                      <dd class="ophold-kort-status">
+                        <span class="status-prik"></span>
+                        8 ledige pladser
+                      </dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Afrejse</dt>
+                      <dd class="ophold-kort-info-tekst">17. februar 2026</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe ophold-kort-varighed">
+                      <dt class="ophold-kort-info-label">Varighed</dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 90 dage</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">
+                        Pris inkl. fly tur/retur
+                      </dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 86.900 DKK</dd>
+                    </div>
+                  </dl>
+
+                  <div class="ophold-kort-handlinger">
+                    <a
+                      href="ophold.html"
+                      class="knap knap-groen ophold-kort-laes-mere"
+                    >
+                      Se ophold
+                    </a>
+                    <a href="reservation.html" class="knap knap-orange">
+                      Reservér plads
+                    </a>
+                    <a href="infomoede.html" class="knap knap-hvid infomode-link">
+                      <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomode-ikon" />
+                      Infomøde
+                    </a>
+                  </div>
+                </article>
+
+                <article class="ophold-kort">
+                  <div class="ophold-kort-billede-wrapper">
+                    <img
+                      src="assets/img/INT24.JPG"
+                      alt="Elever samlet under højskoleophold i Asien"
+                      class="ophold-kort-billede billede-fokus-midte"
+                    />
+
+                    <span class="ophold-kort-label">90 dage</span>
+                  </div>
+
+                  <div class="ophold-kort-indhold">
+                    <h3 class="ophold-kort-titel">
+                      Højskole i Indien, Nepal, Thailand, Vietnam & Sri Lanka
+                    </h3>
+
+                    <div class="ophold-kort-beskrivelse">
+                      <p><strong>Introdage:</strong> Bangkok</p>
+                      <p><strong>Indien:</strong> Goa & Rishikesh</p>
+                      <p><strong>Nepal:</strong> Kathmandu & Pokhara</p>
+                      <p><strong>Thailand:</strong> Bangkok & Koh Tao</p>
+                      <p>
+                        <strong>Vietnam:</strong> Hanoi, Lan Ha Bay, Ninh Binh &
+                        Mai Chau
+                      </p>
+                      <p><strong>Sri Lanka:</strong> Ella & Kandy</p>
+                    </div>
+                  </div>
+
+                  <dl class="ophold-kort-info">
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Status</dt>
+                      <dd class="ophold-kort-status">
+                        <span class="status-prik"></span>
+                        2 ledige pladser
+                      </dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Afrejse</dt>
+                      <dd class="ophold-kort-info-tekst">22. februar 2026</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe ophold-kort-varighed">
+                      <dt class="ophold-kort-info-label">Varighed</dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 90 dage</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">
+                        Pris inkl. fly tur/retur
+                      </dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 55.500 DKK</dd>
+                    </div>
+                  </dl>
+
+                  <div class="ophold-kort-handlinger">
+                    <a
+                      href="ophold.html"
+                      class="knap knap-groen ophold-kort-laes-mere"
+                    >
+                      Se ophold
+                    </a>
+                    <a href="reservation.html" class="knap knap-orange">
+                      Reservér plads
+                    </a>
+
+                    <a href="infomoede.html" class="knap knap-hvid infomode-link">
+                      <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomode-ikon" />
+                      Infomøde
+                    </a>
+                  </div>
+                </article>
+
+                <article class="ophold-kort">
+                  <div class="ophold-kort-billede-wrapper">
+                    <img
+                      src="assets/img/Sydamerika1.jpeg"
+                      alt="Elever ved vandfald under højskoleophold"
+                      class="ophold-kort-billede billede-fokus-midte"
+                    />
+
+                    <span class="ophold-kort-label">90 dage</span>
+                  </div>
+
+                  <div class="ophold-kort-indhold">
+                    <h3 class="ophold-kort-titel">
+                      Højskole i Brasilien, Colombia, Costa Rica & Mexico
+                    </h3>
+
+                    <div class="ophold-kort-beskrivelse">
+                      <p><strong>Introdage:</strong> Rio de Janeiro</p>
+                      <p><strong>Brasilien:</strong> Rio de Janeiro</p>
+                      <p>
+                        <strong>Colombia:</strong> Bogotá, Cartagena & La
+                        Boquilla
+                      </p>
+                      <p>
+                        <strong>Costa Rica:</strong> San José, Monteverde &
+                        Puerto Viejo
+                      </p>
+                      <p>
+                        <strong>Mexico:</strong> Playa del Carmen, Valladolid &
+                        Isla Holbox
+                      </p>
+                    </div>
+                  </div>
+
+                  <dl class="ophold-kort-info">
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Status</dt>
+                      <dd class="ophold-kort-status">
+                        <span class="status-prik"></span>
+                        4 ledige pladser
+                      </dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">Afrejse</dt>
+                      <dd class="ophold-kort-info-tekst">26. februar 2026</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe ophold-kort-varighed">
+                      <dt class="ophold-kort-info-label">Varighed</dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 90 dage</dd>
+                    </div>
+
+                    <div class="ophold-kort-info-gruppe">
+                      <dt class="ophold-kort-info-label">
+                        Pris inkl. fly tur/retur
+                      </dt>
+                      <dd class="ophold-kort-info-tekst">Ca. 62.300 DKK</dd>
+                    </div>
+                  </dl>
+
+                  <div class="ophold-kort-handlinger">
+                    <a
+                      href="ophold.html"
+                      class="knap knap-groen ophold-kort-laes-mere"
+                    >
+                      Se ophold
+                    </a>
+                    <a href="reservation.html" class="knap knap-orange">
+                      Reservér plads
+                    </a>
+                    <a href="infomoede.html" class="knap knap-hvid infomode-link">
+                      <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomode-ikon" />
+                      Infomøde
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+              <a
+                href="hojskoleophold.html"
+                class="knap knap-orange snart-ophold-knap"
+              >
+                Gå på opdagelse i alle vores ophold
+              </a>
+            </div>
+          </section>
+        
+          
+  <section class="statistik-sektion">
+    <div class="container statistik-indhold">
+      <h2 class="statistik-overskrift">
+        +3.000 glade elever<br>
+        siden 2010
+      </h2>
+  
+      <div class="statistik-kort-wrapper">
+        <div class="anmeldelse-kort">
+          <a href="https://www.trustpilot.com/review/www.hojskolendk.dk?page=3" class="anmeldelse-link" target="_blank"
+            rel="noopener noreferrer">
+            <img src="./assets/img/Trustpilot.png" alt="Se HØJSKOLENDK på Trustpilot" class="anmeldelse-billede">
+          </a>
+        </div>
+  
+        <div class="statistik-tal-kort">
+          <div class="statistik-punkt">
+            <span class="statistik-ikon statistik-ikon-tommer"></span>
+            <strong>97%</strong>
+            <p>Anbefaler HØJSKOLENDK (2025)</p>
+          </div>
+  
+          <div class="statistik-punkt">
+            <span class="statistik-ikon statistik-ikon-sol"></span>
+            <strong>+3.000</strong>
+            <p>Glade og skønne elever</p>
+          </div>
+  
+          <div class="statistik-punkt">
+            <span class="statistik-ikon statistik-ikon-palme"></span>
+            <strong>2010</strong>
+            <p>Højskole i udlandet siden</p>
+          </div>
+  
+          <div class="statistik-punkt">
+            <span class="statistik-ikon statistik-ikon-rejse"></span>
+            <strong>Rejsegaranti</strong>
+            <p>Rejs trygt under <a href="#">Rejsegarantifonden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+    <section class="oplevelse-sektion">
+      <div class="container oplevelse-indhold">
+        <h2 class="oplevelse-overskrift">
+          Klar på en oplevelse<br>
+          for livet?
+        </h2>
+    
+        <div class="oplevelse-slider">
+          <article class="oplevelse-kort">
+            <img src="./assets/img/Nyevenner.jpeg" alt="Elever på højskoleophold" class="oplevelse-billede">
+    
+            <h3 class="oplevelse-kort-overskrift">
+              Sammenhold og nye venner
+            </h3>
+          </article>
+      <article class="oplevelse-kort">
+        <img src="./assets/img/Anneogmathias.png" alt="Elever på rejse sammen" class="oplevelse-billede">
+      
+        <h3 class="oplevelse-kort-overskrift">
+          En rejseleder, som støtter dig
+        </h3>
+      </article>
+      <article class="oplevelse-kort">
+        <img src="./assets/img/rejsevenner.jpeg" alt="Søde elever" class="oplevelse-billede">
+      
+        <h3 class="oplevelse-kort-overskrift">
+          Nye kulturmøder
+        </h3>
+      </article>
+          <article class="oplevelse-kort">
+            <img src="./assets/img/Bucketlist.jpeg" alt="Elever på adventure-aktivitet"
+              class="oplevelse-billede">
+    
+            <h3 class="oplevelse-kort-overskrift">
+              Bucketlist oplevelser
+            </h3>
+          </article>
+    
+          <article class="oplevelse-kort">
+            <img src="./assets/img/IMG_7419.JPG" alt="Elever på rejse sammen" class="oplevelse-billede">
+    
+            <h3 class="oplevelse-kort-overskrift">
+              Inspirerende undervisning
+            </h3>
+          </article>
+        
+              <article class="oplevelse-kort">
+                <img src="./assets/img/NannaSkydive.jpg" alt="Elever på rejse sammen" class="oplevelse-billede">
+              
+                <h3 class="oplevelse-kort-overskrift">
+                  Adrenalin og adventure
+                </h3>
+              </article>
+        </div>
+      </div>
+    </section>
+<section class="infomoede-sektion">
+  <div class="container infomoede-indhold">
+
+    <div class="infomoede-billeder">
+      <img src="./assets/img/Infomøde1.jpeg" alt=""
+        class="infomoede-billede infomoede-billede-baggrund infomoede-billede-venstre">
+      <img src="./assets/img/Infomøde2.jpeg" alt=""
+        class="infomoede-billede infomoede-billede-baggrund infomoede-billede-hoejre">
+      <img src="./assets/img/Infomøde3.jpeg" alt="Elever på højskoleophold"
+        class="infomoede-billede infomoede-billede-forgrund">
+
+      <img src="./assets/img/Stempel.png" alt="" class="infomoede-stempel">
+    </div>
+
+    <div class="infomoede-tekst">
+      <p class="infomoede-label">Online infomøde</p>
+
+      <h2 class="infomoede-overskrift">
+        Kom til infomøde
+      </h2>
+
+      <p class="infomoede-broedtekst">
+        Er du nysgerrig på højskole i udlandet? Kom med til et online infomøde, hvor vi fortæller om opholdene,
+        fællesskabet, undervisningen, alt det praktiske og hvor du kan stille alle dine spørgsmål.
+      </p>
+
+      <div class="infomoede-datoer">
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>06 Januar</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>03 Februar</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>17 Marts</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>14 April</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>05 Maj</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+
+        <div class="infomoede-dato">
+          <div class="infomoede-dato-venstre">
+            <img src="assets/icons/calendar-days-regular-full.svg" alt="" class="infomoede-ikon">
+            <p><strong>09 Juni</strong> 2026</p>
+          </div>
+          <p class="infomoede-tid">Kl. 18.30 - 20.00</p>
+        </div>
+      </div>
+
+      <a href="#" class="knap knap-orange infomoede-knap">Tilmeld infomøde</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="rejsebreve-sektion">
+  <div class="container rejsebreve-indhold">
+
+    <div class="rejsebreve-top">
+      <h2 class="rejsebreve-overskrift">
+        Rejsebreve fra<br>
+        tidligere elever
+      </h2>
+
+      <p class="rejsebreve-tekst">
+        Læs med, når tidligere elever fortæller om oplevelser, fællesskab,
+        undervisning og alt det, der sker, når man rejser ud sammen.
+      </p>
+    </div>
+
+    <div class="rejsebreve-slider" data-rejsebreve-slider>
+
+      <article class="rejsebrev-kort">
+        <a href="./rejsebrev.html" class="rejsebrev-kort-link" aria-label="Læs rejsebrev fra Caroline"></a>
+
+        <img src="./assets/img/Caroline.png" alt="Tidligere elev på båd" class="rejsebrev-billede">
+
+        <div class="rejsebrev-indhold">
+          <h3 class="rejsebrev-titel">
+            Jeg er blevet et modigere menneske
+          </h3>
+
+          <p class="rejsebrev-citat">
+            “Jeg blev overrasket over, hvor meget jeg udviklede mig på turen. Der var mange situationer, hvor jeg blev
+            skubbet lidt ud af min komfortzone, men på en måde hvor jeg stadig følte mig tryg.”
+          </p>
+
+          <p class="rejsebrev-navn">
+            – Caroline, 20 år
+          </p>
+        </div>
+      </article>
+
+      <article class="rejsebrev-kort">
+        <a href="./rejsebrev.html" class="rejsebrev-kort-link" aria-label="Læs rejsebrev fra Andrea"></a>
+
+        <img src="./assets/img/Andrea.jpeg" alt="Elever på bjergtur" class="rejsebrev-billede">
+
+        <div class="rejsebrev-indhold">
+          <h3 class="rejsebrev-titel">
+            De mest fantastiske 3 måneder
+          </h3>
+
+          <p class="rejsebrev-citat">
+            “Jeg er lige kommet hjem fra opholdet, og vi havde de vildeste oplevelser med os hjem. Begge har skabt helt
+            fantastiske rammer, som har givet os den fedeste og mest uforglemmelige tur.”
+          </p>
+
+          <p class="rejsebrev-navn">
+            – Andrea, 19 år
+          </p>
+        </div>
+      </article>
+
+      <article class="rejsebrev-kort">
+        <a href="./rejsebrev.html" class="rejsebrev-kort-link" aria-label="Læs rejsebrev fra Magnus"></a>
+
+        <img src="./assets/img/Magnus.jpeg" alt="Elev dykker under vandet" class="rejsebrev-billede">
+
+        <div class="rejsebrev-indhold">
+          <h3 class="rejsebrev-titel">
+            Det her har været den mest fantastiske oplevelse i mit liv
+          </h3>
+
+          <p class="rejsebrev-citat">
+            “Vores rejseleder Elisabeth og underviser Jakob havde styr på alt, de skabte tryghed, sørgede for god
+            stemning og gjorde
+            virkelig en positiv forskel for vores rejse. Man kunne mærke, at de brændte for oplevelserne og for
+            fællesskabet, og det
+            gjorde rejsen endnu mere speciel...”
+          </p>
+
+          <p class="rejsebrev-navn">
+            – Magnus, 20 år
+          </p>
+        </div>
+      </article>
+
+      <article class="rejsebrev-kort">
+        <a href="./rejsebrev.html" class="rejsebrev-kort-link" aria-label="Læs rejsebrev fra Sarah"></a>
+
+        <img src="./assets/img/Sarah.jpeg" alt="Elev på bjerg med solnedgang" class="rejsebrev-billede">
+
+        <div class="rejsebrev-indhold">
+          <h3 class="rejsebrev-titel">
+            Et uforglemmeligt ophold
+          </h3>
+
+          <p class="rejsebrev-citat">
+            “Det her har været den største og mest fantastiske oplevelse i mit liv. Jeg vil aldrig glemme den, og jeg
+            kan kun give
+            mine aller varmeste anbefalinger til alle, der overvejer at tage af sted. Det er et eventyr for livet”
+          </p>
+
+          <p class="rejsebrev-navn">
+            – Sarah, 24 år
+          </p>
+        </div>
+      </article>
+
+      <article class="rejsebrev-kort">
+        <a href="./rejsebrev.html" class="rejsebrev-kort-link" aria-label="Læs rejsebrev fra Anton"></a>
+
+        <img src="./assets/img/Anton.jpeg" alt="Elev på strand" class="rejsebrev-billede">
+
+        <div class="rejsebrev-indhold">
+          <h3 class="rejsebrev-titel">
+            Mere end bare en rejse
+          </h3>
+
+          <p class="rejsebrev-citat">
+            “Jeg havde nok tænkt, at det mest skulle handle om at rejse, opleve noget nyt og få et afbræk fra hverdagen.
+            Og det
+            gjorde det også. Men jeg blev faktisk overrasket over, hvor meget fællesskabet kom til at betyde. Det var
+            fedt at være
+            en del af en gruppe, hvor der både var plads til grin, snakke og bare at være sig selv.”
+          </p>
+
+          <p class="rejsebrev-navn">
+            – Anton, 21 år
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="rejsebreve-bund">
+      <div class="rejsebreve-pile">
+        <button class="rejsebreve-pil rejsebreve-pil-forrige" type="button" aria-label="Forrige rejsebrev">
+          <img src="./assets/icons/arrow-left-solid-full.svg" alt="">
+        </button>
+
+        <button class="rejsebreve-pil rejsebreve-pil-naeste" type="button" aria-label="Næste rejsebrev">
+          <img src="./assets/icons/arrow-right-solid-full.svg" alt="">
+        </button>
+      </div>
+
+      <div class="rejsebreve-prikker" data-rejsebreve-prikker>
+        <button class="rejsebreve-prik aktiv" type="button" aria-label="Vis rejsebrev 1"></button>
+        <button class="rejsebreve-prik" type="button" aria-label="Vis rejsebrev 2"></button>
+        <button class="rejsebreve-prik" type="button" aria-label="Vis rejsebrev 3"></button>
+        <button class="rejsebreve-prik" type="button" aria-label="Vis rejsebrev 4"></button>
+        <button class="rejsebreve-prik" type="button" aria-label="Vis rejsebrev 5"></button>
+      </div>
+
+      <a href="./rejsebreve.html" class="knap knap-orange rejsebreve-knap">
+        Læs alle rejsebreve
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="tryghed-sektion">
+  <div class="tryghed-indhold">
+    <div class="tryghed-tekst">
+      <h2 class="tryghed-overskrift">
+        Rejs trygt med<br>
+        HØJSKOLENDK
+      </h2>
+
+      <div class="tryghed-punkter">
+        <article class="tryghed-punkt">
+          <h3>Medlem af Rejsegarantifonden</h3>
+          <p>
+            Når du rejser med HØJSKOLENDK, rejser du med en arrangør,
+            der er medlem af Rejsegarantifonden. Det giver en ekstra
+            tryghed, når du booker dit ophold og tager afsted.
+          </p>
+        </article>
+
+        <article class="tryghed-punkt">
+          <h3>Dansk rejseleder på hele opholdet</h3>
+          <p>
+            Du rejser altid med en dansk rejseleder, som følger gruppen
+            undervejs, hjælper med det praktiske og er en tryg person
+            at gå til på rejsen.
+          </p>
+        </article>
+
+        <article class="tryghed-punkt">
+          <h3>Trygge rammer fra start til slut</h3>
+          <p>
+            Vi sørger for tydelig information før afrejse, fælles rammer
+            under opholdet og støtte undervejs, så du kan fokusere på
+            oplevelserne, fællesskabet og eventyret.
+          </p>
+        </article>
+      </div>
+
+      <a href="./laes-os-at-kende.html" class="knap knap-orange tryghed-knap">
+        Lær os bedre at kende
+      </a>
+    </div>
+
+    <div class="tryghed-billeder">
+      <img src="./assets/img/Tryghed2.jpeg" alt="Elever på bjergtop under højskoleophold"
+        class="tryghed-billede tryghed-billede-top">
+        <img src="./assets/img/Stempel.png" alt="" class="tryghed-stempel">
+      <img src="./assets/img/Tryghed1.JPEG" alt="Elever i rundkreds med diplomer"
+        class="tryghed-billede tryghed-billede-bund">
+    </div>
+  
+  </div>
+</section>
+
+<section class="faq-sektion">
+  <div class="container faq-indhold">
+    <div class="faq-tekst">
+      <div class="faq-personer">
+        <img src="./assets/img/Mattias-500.jpg" alt="Rejseleder" class="faq-person">
+        <img src="./assets/img/Asta-500.jpg" alt="Rejseleder" class="faq-person">
+        <img src="./assets/img/Amadeus-500.jpg" alt="Rejseleder" class="faq-person">
+      </div>
+
+      <h2 class="faq-overskrift">Få svar på dine spørgsmål</h2>
+
+      <p class="faq-intro">Vi sidder klar til at hjælpe dig.</p>
+
+      <p>
+        Med flere hundrede skønne elever om året, har vi hørt de fleste spørgsmål vedrørende vores højskoleophold i
+        udlandet mange gange. Vi har gjort vores bedste for at svare på de fleste “ofte stillede spørgsmål” herunder.
+      </p>
+
+      <p>
+        Vi håber du finder svar på dine spørgsmål og hvis ikke, er du altid velkommen til at ringe til os på kontoret på
+        tlf. <strong>7027 9007</strong> eller skrive til os på <strong>info@hojskolendk.dk</strong>
+      </p>
+
+      <p>Mandag - Fredag kl. 10.00 - 17.00.</p>
+
+  <div class="faq-kontakt">
+    <a href="tel:70279007" class="faq-kontakt-link">
+      <img src="assets/icons/phone-solid-full.svg" alt="">
+      7027 9007
+    </a>
+  
+    <a href="mailto:info@hojskolendk.dk" class="faq-kontakt-link">
+      <img src="assets/icons/envelope-regular-full.svg" alt="">
+      info@hojskolendk.dk
+    </a>
+  </div>
+    </div>
+
+    <div class="faq-liste">
+      <h2 class="faq-liste-overskrift">Ofte stillede spørgsmål</h2>
+
+      <details class="faq-punkt">
+        <summary>
+          Hvor mange elever er der på et hold?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Det varierer fra ophold til ophold, men typisk rejser du sammen med en gruppe andre unge.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Hvad er gennemsnitsalderen på vores ophold?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>De fleste elever er unge i sabbatår, men alderen kan variere afhængigt af opholdet.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Rejser de fleste alene?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Ja, mange rejser alene. Det er helt normalt, og fællesskabet starter allerede fra begyndelsen.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Er der lige mange drenge og piger med på holdene?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Fordelingen varierer fra hold til hold, men der er som regel både drenge og piger med.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Er undervisningen på dansk?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Ja, undervisningen foregår som udgangspunkt på dansk.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Kan jeg betale i rater?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Ja, det er muligt at betale i rater. De konkrete betalingsmuligheder afhænger af opholdet.</p>
+      </details>
+
+      <details class="faq-punkt">
+        <summary>
+          Rygsæk eller kuffert på rejsen?
+          <img src="assets/icons/angle-down-solid-full.svg" alt="">
+        </summary>
+        <p>Det afhænger af rejsen, men en rygsæk er ofte praktisk, hvis der er meget transport undervejs.</p>
+      </details>
+
+      <a href="#" class="knap knap-orange faq-knap">Se den fulde FAQ</a>
+    </div>
+  </div>
+</section>
+ </main>
+      <footer class="footer">
+        <div class="container footer-indhold">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo">HØJSKOLENDK</a>
+      
+              <p class="footer-tekst">
+                HØJSKOLENDK er en dansk højskole for unge i alderen 18-28 år.
+                Vi brænder for oplevelser, fællesskabet og det gode eventyr.
+              </p>
+      
+              <div class="footer-kontakt">
+                <a href="tel:70279007" class="footer-kontakt-link">
+                  <img src="assets/icons/phone-solid-full.svg" alt="">
+                  7027 9007
+                </a>
+      
+                <a href="mailto:info@hojskolendk.dk" class="footer-kontakt-link">
+                  <img src="assets/icons/envelope-regular-full.svg" alt="">
+                  info@hojskolendk.dk
+                </a>
+              </div>
+      
+              <p class="footer-aabningstid">Mandag - Fredag Kl. 10.00-16.00</p>
+      
+              <div class="footer-sociale">
+                <a href="https://www.tiktok.com/@hojskolendk" aria-label="TikTok">
+                  <img src="assets/icons/tiktok-brands-solid-full.svg" alt="">
+                </a>
+      
+                <a href="https://www.instagram.com/hojskolendk/" aria-label="Instagram">
+                  <img src="assets/icons/instagram-brands-solid-full.svg" alt="">
+                </a>
+      
+                <a href="https://www.facebook.com/hojskolendk/?locale=da_DK" aria-label="Facebook">
+                  <img src="assets/icons/facebook-f-brands-solid-full.svg" alt="">
+                </a>
+              </div>
+            </div>
+            <details class="footer-menu-gruppe" data-footer-menu>
+              <summary>
+                Information
+                <span class="footer-menu-ikon">+</span>
+              </summary>
+      
+              <ul class="footer-menu">
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./laes-os-at-kende.html">Lær os at kende</a></li>
+                <li><a href="./kontakt.html">Kontakt os</a></li>
+                <li><a href="#">Job hos HØJSKOLENDK</a></li>
+                <li><a href="#">Rejsegarantifonden</a></li>
+                <li><a href="./hojskoleophold.html">Højskoleophold</a></li>
+                <li><a href="#">Infomøder</a></li>
+              </ul>
+            </details>
+      
+            <details class="footer-menu-gruppe" data-footer-menu open>
+              <summary>
+                Højskoleophold
+                <span class="footer-menu-ikon">+</span>
+              </summary>
+      
+              <ul class="footer-menu footer-menu-ophold">
+                <li><a href="./ophold.html">Højskole i Maldiverne, Sri Lanka, Bali, Gili Islands, Japan & Australien</a></li>
+                <li><a href="./ophold.html">Højskole i Australien, New Zealand, Vietnam, Bali, Gili Islands & Lombok</a></li>
+                <li><a href="./ophold.html">Højskole i Brasilien, Colombia, Costa Rica & Mexico</a></li>
+                <li><a href="./ophold.html">Højskole i Costa Rica, Mexico & Colombia</a></li>
+                <li><a href="./ophold.html">Højskole i Indien, Nepal, Thailand, Vietnam & Sri Lanka</a></li>
+                <li><a href="./ophold.html">Højskole i Hawaii, Australien, Japan, Bali & Gili Islands</a></li>
+                <li><a href="./ophold.html">Højskole i Maldiverne, Sri Lanka, Bali & Gili Islands</a></li>
+                <li><a href="./ophold.html">Højskole i Brasilien, Bolivia, Colombia, Ecuador, Peru & Argentina</a></li>
+                <li><a href="./ophold.html">Højskole i Bali, Gili Islands & Lombok</a></li>
+                <li><a href="./ophold.html">Højskole i Japan</a></li>
+              </ul>
+            </details>
+          </div>
+      
+          <div class="footer-partnere">
+            <h2>Samarbejdspartnere</h2>
+      <div class="footer-logoer">
+        <div class="footer-logo-spor">
+          <img src="./assets/partner-img/rejsegarantifonden.png" alt="Rejsegarantifonden">
+          <img src="./assets/partner-img/Jysk_Rejsebureau_idlchG1wKt_0-480x145.png" alt="Jysk Rejsebureau">
+          <img src="./assets/partner-img/Gouda_id91pS60Vo_0-480x129.png" alt="Gouda">
+          <img src="./assets/partner-img/billetkontoret.png" alt="Billetkontoret">
+          <img src="./assets/partner-img/animalprotection.png" alt="World Animal Protection">
+          <img src="./assets/partner-img/Trees for the future.webp" alt="Trees for the Future">
+          <img src="./assets/partner-img/Verdensskove.png" alt="Verdens Skove">
+        </div>
+      </div>
+          </div>
+      
+          <div class="footer-bund">
+            <p>Copyright © HØJSKOLENDK 2026 • CVR 32491162</p>
+      
+            <p>HØJSKOLENDK er medlem af Rejsegarantifonden.</p>
+      
+            <div class="footer-links">
+              <a href="#">Handelsbetingelser</a>
+              <a href="#">Cookiepolitik</a>
+              <a href="#">Data- & Privatlivspolitik</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
   </body>
 </html>

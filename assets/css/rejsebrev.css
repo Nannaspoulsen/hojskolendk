@@ -1,0 +1,319 @@
+/* SIDE-SPECIFIK HEADER GENBRUGT FRA LAER OS AT KENDE*/
+.side-laer-os-at-kende .toplinje,
+.side-laer-os-at-kende .side-header {
+    background-color: var(--farve-baggrund);
+}
+
+.side-laer-os-at-kende .toplinje-social-link,
+.side-laer-os-at-kende .toplinje-punkt,
+.side-laer-os-at-kende .toplinje-hjaelp {
+    color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .toplinje-punkt .toplinje-ikon,
+.side-laer-os-at-kende .toplinje-hjaelp .toplinje-ikon,
+.side-laer-os-at-kende .logo {
+    color: var(--farve-orange);
+}
+
+.side-laer-os-at-kende .navigation-link,
+.side-laer-os-at-kende .navigation-dropdown-knap {
+    color: #030027;
+}
+
+.side-laer-os-at-kende .navigation-dropdown-knap img {
+    filter: none;
+}
+
+.side-laer-os-at-kende .menu-linje {
+    background-color: var(--farve-moerk);
+}
+
+
+/* MOBILMENU ÅBEN */
+
+.side-laer-os-at-kende .navigation.er-aaben {
+    background-color: var(--farve-moerk);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-link,
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap {
+    color: var(--farve-hvid);
+}
+
+.side-laer-os-at-kende .navigation.er-aaben .navigation-dropdown-knap img {
+    filter: brightness(0) invert(1);
+}
+
+.side-laer-os-at-kende .menu-knap.er-aaben .menu-linje {
+    background-color: var(--farve-hvid);
+}
+
+
+/* SIDE */
+
+.rejsebrev-side {
+    background-color: var(--farve-baggrund);
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+    padding-top: 7rem;
+}
+
+.breadcrumbs-indhold {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+}
+
+.breadcrumbs-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--farve-orange);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.breadcrumbs-link::before {
+    content: "←";
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.breadcrumbs-aktuel {
+    color: var(--farve-moerk);
+    opacity: 0.55;
+}
+
+
+/* TOP */
+
+.rejsebrev-top {
+    padding: 2rem 0 2.5rem;
+}
+
+.rejsebrev-top-indhold {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.rejsebrev-hovedbillede {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 28rem;
+    object-fit: cover;
+}
+
+.rejsebrev-top-tekst {
+    display: flex;
+    flex-direction: column;
+}
+
+.rejsebrev-overskrift {
+    color: var(--farve-moerk);
+    font-family: var(--font-overskrift);
+    font-size: clamp(2.1rem, 10vw, 5rem);
+    line-height: 1;
+}
+
+.rejsebrev-info {
+    margin-top: var(--afstand-s);
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.rejsebrev-info p {
+    margin: 0;
+}
+
+
+/* ARTIKEL */
+
+.rejsebrev-artikel {
+    padding: 0 0 5rem;
+}
+
+.rejsebrev-artikel-indhold {
+    display: grid;
+    gap: 2.8rem;
+}
+
+.rejsebrev-tekst {
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.rejsebrev-tekst p {
+    margin-bottom: 1.2rem;
+}
+
+.rejsebrev-række {
+    display: grid;
+    gap: var(--afstand-l);
+}
+
+
+/* POLAROIDS */
+
+.rejsebrev-billeder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.rejsebrev-polaroid {
+    width: min(17rem, 50vw);
+    margin: 0;
+    padding: 0.55rem 0.55rem 1.3rem;
+    border-radius: 0.25rem;
+    background-color: var(--farve-hvid);
+    box-shadow: 0 1rem 2rem rgba(34, 34, 34, 0.15);
+}
+
+.rejsebrev-polaroid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.15rem;
+    object-fit: cover;
+}
+
+.rejsebrev-polaroid-venstre {
+    z-index: 1;
+    transform: rotate(3deg);
+}
+
+.rejsebrev-polaroid-hoejre {
+    z-index: 2;
+    margin-top: var(--afstand-l);
+    margin-left: -2.8rem;
+    transform: rotate(-3deg);
+}
+
+
+/* AFSLUTNING */
+
+.rejsebrev-afslutning {
+    display: grid;
+    gap: var(--afstand-l);
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-weight: 700;
+}
+
+.rejsebrev-knap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 3.2rem;
+    padding: var(--afstand-s);
+    border-radius: 0.25rem;
+    background-color: var(--farve-orange);
+    color: var(--farve-hvid);
+    font-family: var(--font-broedtekst);
+    font-size: var(--tekst-lille);
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+    .breadcrumbs-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.25rem;
+        }
+
+    .rejsebrev-top {
+        padding: 2rem 0 var(--afstand-sektion);
+    }
+
+    .rejsebrev-top-indhold {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2.8rem;
+    }
+
+    .rejsebrev-hovedbillede {
+        width: 100%;
+        max-width: 100%;
+        height: 29rem;
+        margin-left: 0;
+        border-radius: 0.8rem;
+    }
+
+    .rejsebrev-overskrift {
+        max-width: 42rem;
+        font-size: clamp(4rem, 5.4vw, 5.6rem);
+    }
+
+    .rejsebrev-info {
+        margin-top: 1.3rem;
+        font-size: var(--tekst-lille);
+        line-height: 1.5;
+    }
+
+    .rejsebrev-artikel {
+        padding-bottom: 6rem;
+    }
+
+    .rejsebrev-artikel-indhold {
+        gap: 4.5rem;
+    }
+
+    .rejsebrev-tekst {
+        font-size: var(--tekst-normal);
+        line-height: 1.6;
+    }
+
+    .rejsebrev-tekst-bred {
+        width: 100%;
+    }
+
+    .rejsebrev-række {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--afstand-sektion);
+    }
+
+    .rejsebrev-billeder {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .rejsebrev-polaroid {
+        width: min(22rem, 58%);
+        padding: 0.8rem 0.8rem var(--afstand-l);
+    }
+
+    .rejsebrev-polaroid-hoejre {
+        margin-top: var(--afstand-sektion);
+        margin-left: -5rem;
+    }
+
+    .rejsebrev-knap {
+        min-width: 15rem;
+    }
+
+    .rejsebrev-knap:hover {
+        transform: translateY(-0.15rem);
+        box-shadow: 0 0.8rem 1.4rem rgba(34, 34, 34, 0.16);
+    }
+}
