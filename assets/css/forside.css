@@ -29,16 +29,17 @@
 
 /* HERO */
 
+/* HERO */
+
 .hero {
   position: relative;
-
-  /* calc() bruges til at trække højden på toplinjen/headeren fra viewporten. */
+  isolation: isolate;
   min-height: calc(98vh - 4rem);
-
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: var(--farve-moerk);
 }
 
 .hero-video,
@@ -48,7 +49,7 @@
 }
 
 .hero-video {
-  z-index: 0;
+  z-index: -2;
   display: block;
   width: 100%;
   height: 100%;
@@ -56,14 +57,14 @@
 }
 
 .hero-overlay {
-  z-index: 1;
+  z-index: -1;
   background: rgba(34, 34, 34, 0.15);
   pointer-events: none;
 }
 
 .hero-indhold {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: var(--side-padding);
   text-align: center;
 }
