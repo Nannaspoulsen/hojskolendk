@@ -42,8 +42,9 @@ billeder i HTML'en og gør ikonerne lettere at styre.
 .toplinje-punkt,
 .toplinje-hjaelp {
   gap: 0.45rem;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 /* TOPLINJE-IKONER */
@@ -378,11 +379,13 @@ Når punktet får .er-aaben, får dropdownen højde og bliver synlig.
   .toplinje-hjaelp,
   .toplinje-punkt-desktop {
     display: flex;
+    font-size: 0.8rem;
   }
 
   .toplinje-sociale,
   .toplinje-info {
     gap: var(--afstand-m);
+    font-size: 0.8rem;
   }
 
   .toplinje-ikon {
