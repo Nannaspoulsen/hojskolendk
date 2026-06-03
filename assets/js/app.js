@@ -73,31 +73,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* MENU OG NAVIGATION */
 
-  function initMenuOgNavigation() {
-    const menuKnap = document.querySelector(".js-menu-knap");
-    const navigation = document.querySelector(".js-navigation");
-    const dropdownKnap = document.querySelector(".js-dropdown-knap");
-    const dropdownPunkt = document.querySelector(".navigation-punkt-dropdown");
+/* MENU OG NAVIGATION */
 
-    if (menuKnap && navigation) {
-      menuKnap.addEventListener("click", function () {
-        menuKnap.classList.toggle("er-aaben");
-        navigation.classList.toggle("er-aaben");
-        document.body.classList.toggle("er-laast");
+function initMenuOgNavigation() {
+  const menuKnap = document.querySelector(".js-menu-knap");
+  const navigation = document.querySelector(".js-navigation");
+  const dropdownKnapper = document.querySelectorAll(".js-dropdown-knap");
 
-        const menuErAaben = navigation.classList.contains("er-aaben");
+  if (menuKnap && navigation) {
+    menuKnap.addEventListener("click", function () {
+      menuKnap.classList.toggle("er-aaben");
+      navigation.classList.toggle("er-aaben");
+      document.body.classList.toggle("er-laast");
 
-        menuKnap.setAttribute("aria-expanded", menuErAaben);
-        menuKnap.setAttribute("aria-label", menuErAaben ? "Luk menu" : "Åbn menu");
-      });
-    }
+      const menuErAaben = navigation.classList.contains("er-aaben");
 
-    if (dropdownKnap && dropdownPunkt) {
-      dropdownKnap.addEventListener("click", function () {
-        dropdownPunkt.classList.toggle("er-aaben");
-      });
-    }
+      menuKnap.setAttribute("aria-expanded", menuErAaben);
+      menuKnap.setAttribute("aria-label", menuErAaben ? "Luk menu" : "Åbn menu");
+    });
   }
+
+  dropdownKnapper.forEach(function (dropdownKnap) {
+    dropdownKnap.addEventListener("click", function () {
+      const dropdownPunkt = dropdownKnap.closest(".navigation-punkt-dropdown");
+
+      if (!dropdownPunkt) {
+        return;
+      }
+
+      dropdownKnapper.forEach(function (andenDropdownKnap) {
+        const andetDropdownPunkt = andenDropdownKnap.closest(".navigation-punkt-dropdown");
+
+        if (andetDropdownPunkt && andetDropdownPunkt != dropdownPunkt) {
+          andetDropdownPunkt.classList.remove("er-aaben");
+          andenDropdownKnap.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      dropdownPunkt.classList.toggle("er-aaben");
+
+      const dropdownErAaben = dropdownPunkt.classList.contains("er-aaben");
+
+      dropdownKnap.setAttribute("aria-expanded", dropdownErAaben);
+    });
+  });
+}
 
 
 

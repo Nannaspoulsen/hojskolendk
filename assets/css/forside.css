@@ -48,13 +48,17 @@
 }
 
 .hero-video {
+  z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .hero-overlay {
+  z-index: 1;
   background: rgba(34, 34, 34, 0.15);
+  pointer-events: none;
 }
 
 .hero-indhold {

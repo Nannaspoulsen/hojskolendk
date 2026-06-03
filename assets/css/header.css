@@ -10,14 +10,13 @@ SVG-filer som former og farve dem med background-color i CSS. Det giver færre
 billeder i HTML'en og gør ikonerne lettere at styre.
 */
 
-
 /* TOPLINJE */
 
 .toplinje {
-    position: relative;
-    z-index: 20;
-    padding-block: var(--afstand-xs);
-    background-color: var(--farve-baggrund);
+  position: relative;
+  z-index: 20;
+  padding-block: var(--afstand-xs);
+  background-color: var(--farve-baggrund);
 }
 
 .toplinje-indhold,
@@ -25,28 +24,27 @@ billeder i HTML'en og gør ikonerne lettere at styre.
 .toplinje-punkt,
 .toplinje-hjaelp,
 .toplinje-social-link {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .toplinje-indhold,
 .toplinje-info {
-    justify-content: center;
+  justify-content: center;
 }
 
 .toplinje-sociale,
 .toplinje-hjaelp,
 .toplinje-punkt-desktop {
-    display: none;
+  display: none;
 }
 
 .toplinje-punkt,
 .toplinje-hjaelp {
-    gap: 0.45rem;
-    font-weight: 500;
-    text-decoration: none;
+  gap: 0.45rem;
+  font-weight: 500;
+  text-decoration: none;
 }
-
 
 /* TOPLINJE-IKONER */
 
@@ -56,73 +54,71 @@ Hver ikon-class skifter kun selve SVG-filen, mens størrelse og farve styres sam
 */
 
 .toplinje-ikon {
-    flex: 0 0 auto;
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--farve-orange);
-    -webkit-mask: var(--ikon) center / contain no-repeat;
-    mask: var(--ikon) center / contain no-repeat;
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--farve-orange);
+  -webkit-mask: var(--ikon) center / contain no-repeat;
+  mask: var(--ikon) center / contain no-repeat;
 }
 
 .toplinje-social-link .toplinje-ikon {
-    background-color: var(--farve-moerk);
+  background-color: var(--farve-moerk);
 }
 
 .toplinje-ikon-check {
-    --ikon: url("../icons/check-solid-full.svg");
+  --ikon: url("../icons/check-solid-full.svg");
 }
 
 .toplinje-ikon-fly {
-    --ikon: url("../icons/plane-solid-full.svg");
+  --ikon: url("../icons/plane-solid-full.svg");
 }
 
 .toplinje-ikon-skjold {
-    --ikon: url("../icons/shield-solid-full.svg");
+  --ikon: url("../icons/shield-solid-full.svg");
 }
 
 .toplinje-ikon-hjaelp {
-    --ikon: url("../icons/life-ring-solid-full.svg");
+  --ikon: url("../icons/life-ring-solid-full.svg");
 }
 
 .toplinje-ikon-tiktok {
-    --ikon: url("../icons/tiktok-brands-solid-full.svg");
+  --ikon: url("../icons/tiktok-brands-solid-full.svg");
 }
 
 .toplinje-ikon-instagram {
-    --ikon: url("../icons/instagram-brands-solid-full.svg");
+  --ikon: url("../icons/instagram-brands-solid-full.svg");
 }
 
 .toplinje-ikon-facebook {
-    --ikon: url("../icons/facebook-f-brands-solid-full.svg");
+  --ikon: url("../icons/facebook-f-brands-solid-full.svg");
 }
-
 
 /* HEADER */
 
 .side-header {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    z-index: 30;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: var(--afstand-m) var(--side-padding);
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--afstand-m) var(--side-padding);
 }
 
 .logo {
-    position: relative;
-    z-index: 40;
-    display: inline-block;
-    color: var(--farve-hvid);
-    font-family: var(--font-overskrift);
-    font-size: 1.9rem;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    transform: rotate(-3deg);
+  position: relative;
+  z-index: 40;
+  display: inline-block;
+  color: var(--farve-hvid);
+  font-family: var(--font-overskrift);
+  font-size: 1.9rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transform: rotate(-3deg);
 }
-
 
 /* BURGER */
 
@@ -132,40 +128,41 @@ Når knappen får classen .er-aaben, bliver de tre linjer lavet om til et kryds.
 */
 
 .menu-knap {
-    position: relative;
-    z-index: 40;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 2rem;
-    height: 1.6rem;
-    border: 0;
-    background: none;
-    cursor: pointer;
+  position: relative;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.6rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
 .menu-linje {
-    display: block;
-    width: 100%;
-    height: 0.2rem;
-    border-radius: 999px;
-    background-color: var(--farve-hvid);
-    transform-origin: center;
-    transition: transform 0.35s ease, opacity 0.2s ease;
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 999px;
+  background-color: var(--farve-hvid);
+  transform-origin: center;
+  transition:
+    transform 0.35s ease,
+    opacity 0.2s ease;
 }
 
 .menu-knap.er-aaben .menu-linje:nth-child(1) {
-    transform: translateY(0.7rem) rotate(45deg);
+  transform: translateY(0.7rem) rotate(45deg);
 }
 
 .menu-knap.er-aaben .menu-linje:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .menu-knap.er-aaben .menu-linje:nth-child(3) {
-    transform: translateY(-0.7rem) rotate(-45deg);
+  transform: translateY(-0.7rem) rotate(-45deg);
 }
-
 
 /* MOBILNAVIGATION */
 
@@ -176,80 +173,85 @@ Pointer-events er slået fra, når menuen er lukket, så den ikke blokerer siden
 */
 
 .navigation {
-    position: fixed;
-    inset: 0;
-    z-index: 25;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--farve-moerk);
-    clip-path: circle(0% at calc(100% - 2.5rem) 6.5rem);
-    pointer-events: none;
-    transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12rem var(--side-padding) 3rem;
+  overflow-y: auto;
+  background-color: var(--farve-moerk);
+  clip-path: circle(0% at calc(100% - 2.5rem) 6.5rem);
+  pointer-events: none;
+  transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .navigation.er-aaben {
-    clip-path: circle(150% at calc(100% - 2.5rem) 6.5rem);
-    pointer-events: auto;
+  clip-path: circle(150% at calc(100% - 2.5rem) 6.5rem);
+  pointer-events: auto;
 }
 
 .navigation-liste,
 .navigation-dropdown {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
 }
 
 .navigation-liste {
-    gap: var(--afstand-m);
-    text-align: center;
+  width: 100%;
+  max-width: 34rem;
+  gap: var(--afstand-m);
+  text-align: center;
 }
 
 .navigation-punkt {
-    opacity: 0;
-    transform: translateY(1.5rem);
-    transition: opacity 0.45s ease, transform 0.45s ease;
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
 }
 
 .navigation.er-aaben .navigation-punkt {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .navigation-link,
 .navigation-dropdown-knap,
 .navigation-dropdown-link {
-    color: var(--farve-hvid);
-    font-family: var(--font-overskrift);
-    text-decoration: none;
+  color: var(--farve-hvid);
+  font-family: var(--font-overskrift);
+  text-decoration: none;
 }
 
 .navigation-link,
 .navigation-dropdown-knap {
-    font-size: var(--tekst-sektion);
+  font-size: var(--tekst-sektion);
 }
 
 .navigation-dropdown-knap {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--afstand-xs);
-    border: 0;
-    background: none;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--afstand-xs);
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
 .navigation-dropdown-ikon {
-    width: 2rem;
-    height: 2rem;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
 }
 
 .navigation-punkt-dropdown.er-aaben .navigation-dropdown-ikon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-
 
 /* DROPDOWN */
 
@@ -259,135 +261,249 @@ Når punktet får .er-aaben, får dropdownen højde og bliver synlig.
 */
 
 .navigation-dropdown {
-    max-height: 0;
-    gap: var(--afstand-s);
-    overflow: hidden;
-    transition: max-height 0.4s ease;
+  max-height: 0;
+  gap: var(--afstand-s);
+  overflow: hidden;
+  transition: max-height 0.4s ease;
 }
 
 .navigation-punkt-dropdown.er-aaben .navigation-dropdown {
-    max-height: 10rem;
-    margin-top: var(--afstand-s);
+  max-height: 10rem;
+  margin-top: var(--afstand-s);
 }
 
 .navigation-dropdown-link {
-    display: inline-block;
-    font-size: var(--tekst-mellem);
-    opacity: 0.8;
+  display: inline-block;
+  font-size: var(--tekst-mellem);
+  opacity: 0.8;
 }
 
+/* STOR DROPDOWN TIL HØJSKOLEOPHOLD */
+
+.navigation-stormenu {
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: max-height 0.4s ease;
+}
+
+.navigation-punkt-dropdown.er-aaben .navigation-stormenu {
+  max-height: 80rem;
+  margin-top: var(--afstand-s);
+}
+
+.navigation-stormenu-indhold {
+  display: grid;
+  gap: var(--afstand-m);
+  padding-top: var(--afstand-m);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navigation-stormenu-titel {
+  margin-bottom: 0.35rem;
+  color: var(--farve-hvid);
+  font-family: var(--font-overskrift);
+  font-size: var(--tekst-mellem);
+  line-height: 1.1;
+}
+
+.navigation-stormenu-tekst {
+  margin-bottom: var(--afstand-s);
+  color: var(--farve-hvid);
+  font-size: var(--tekst-lille);
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.navigation-stormenu-liste {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.navigation-stormenu-link {
+  display: flex;
+  gap: 0.6rem;
+  color: var(--farve-hvid);
+  font-size: var(--tekst-lille);
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.navigation-stormenu-link::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--farve-orange);
+}
 
 /* DESKTOP */
 
 @media (min-width: 900px) {
-    .toplinje {
-        padding-block: var(--afstand-s);
-    }
+  .toplinje {
+    padding-block: var(--afstand-s);
+  }
 
-    .toplinje-indhold {
-        justify-content: space-between;
-        gap: var(--afstand-m);
-    }
+  .toplinje-indhold {
+    justify-content: space-between;
+    gap: var(--afstand-m);
+  }
 
-    .toplinje-sociale,
-    .toplinje-hjaelp,
-    .toplinje-punkt-desktop {
-        display: flex;
-    }
+  .toplinje-sociale,
+  .toplinje-hjaelp,
+  .toplinje-punkt-desktop {
+    display: flex;
+  }
 
-    .toplinje-sociale,
-    .toplinje-info {
-        gap: var(--afstand-m);
-    }
+  .toplinje-sociale,
+  .toplinje-info {
+    gap: var(--afstand-m);
+  }
 
-    .toplinje-ikon {
-        width: 1.3rem;
-        height: 1.3rem;
-    }
+  .toplinje-ikon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
 
-    .toplinje-social-link .toplinje-ikon {
-        width: 1.55rem;
-        height: 1.55rem;
-    }
+  .toplinje-social-link .toplinje-ikon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
 
-    .side-header {
-        top: 4.5rem;
-    }
+  .side-header {
+    top: 4.5rem;
+  }
 
-    .logo {
-        font-size: 2rem;
-    }
+  .logo {
+    font-size: 2rem;
+  }
 
-    .menu-knap {
-        display: none;
-    }
+  .menu-knap {
+    display: none;
+  }
 
-    .navigation {
-        position: static;
-        display: block;
-        background-color: transparent;
-        clip-path: none;
-        pointer-events: auto;
-        transition: none;
-    }
+  .navigation {
+    position: static;
+    display: block;
+    padding: 0;
+    overflow: visible;
+    background-color: transparent;
+    clip-path: none;
+    pointer-events: auto;
+    transition: none;
+  }
 
-    .navigation-liste {
-        flex-direction: row;
-        align-items: center;
-        gap: var(--afstand-m);
-        text-align: left;
-    }
+  .navigation-liste {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--afstand-l);
+    text-align: left;
+  }
 
-    .navigation-punkt {
-        position: relative;
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
+  .navigation-punkt {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 
-    .navigation-link,
-    .navigation-dropdown-knap {
-        font-family: var(--font-broedtekst);
-        font-size: var(--tekst-normal);
-        font-weight: 700;
-    }
+  .navigation-link,
+  .navigation-dropdown-knap {
+    font-family: var(--font-broedtekst);
+    font-size: var(--tekst-normal);
+    font-weight: 700;
+    white-space: nowrap;
+  }
 
-    .navigation-dropdown-ikon {
-        width: 0.8rem;
-        height: 0.8rem;
-    }
+  .navigation-dropdown-ikon {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 
-    .navigation-dropdown {
-        position: absolute;
-        top: calc(100% + 1rem);
-        left: 0;
-        display: none;
-        min-width: 7rem;
-        max-height: none;
-        gap: 0;
-        border-radius: var(--radius);
-        background-color: var(--farve-hvid);
-        box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.367);
-    }
+  .navigation-dropdown {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    z-index: 100;
+    display: none;
+    min-width: 7rem;
+    max-height: none;
+    gap: 0;
+    border-radius: var(--radius);
+    background-color: var(--farve-hvid);
+    box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.367);
+  }
 
-    .navigation-punkt-dropdown.er-aaben .navigation-dropdown {
-        display: flex;
-        margin-top: 0;
-    }
+  .navigation-punkt-dropdown.er-aaben .navigation-dropdown {
+    display: flex;
+    margin-top: 0;
+  }
 
-    .navigation-dropdown-link {
-        display: block;
-        width: 100%;
-        padding: 1.5rem;
-        color: var(--farve-moerk);
-        font-family: var(--font-broedtekst);
-        font-size: var(--tekst-lille);
-        font-weight: 600;
-        opacity: 1;
-        white-space: nowrap;
-    }
+  .navigation-dropdown-link {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    color: var(--farve-moerk);
+    font-family: var(--font-broedtekst);
+    font-size: var(--tekst-lille);
+    font-weight: 600;
+    opacity: 1;
+    white-space: nowrap;
+  }
 
-    .navigation-dropdown-link:hover {
-        background-color: var(--farve-groen-transparent);
-    }
+  .navigation-dropdown-link:hover {
+    background-color: var(--farve-groen-transparent);
+  }
+
+  .navigation-punkt-stor {
+    position: static;
+  }
+
+  .navigation-stormenu {
+    position: absolute;
+    top: calc(100% + -2rem);
+    left: var(--side-padding);
+    right: var(--side-padding);
+    display: none;
+    max-height: none;
+    margin-top: 0;
+    padding: 2.5rem;
+    overflow: visible;
+    border-radius: var(--radius);
+    background-color: var(--farve-hvid);
+    box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.367);
+  }
+
+  .navigation-punkt-dropdown.er-aaben .navigation-stormenu {
+    display: block;
+    margin-top: 0;
+  }
+
+  .navigation-stormenu-indhold {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .navigation-stormenu-titel {
+    color: var(--farve-moerk);
+  }
+
+  .navigation-stormenu-tekst {
+    color: var(--farve-moerk);
+    opacity: 0.85;
+  }
+
+  .navigation-stormenu-link {
+    color: var(--farve-moerk);
+  }
+
+  .navigation-stormenu-link:hover {
+    color: var(--farve-orange);
+  }
 }
