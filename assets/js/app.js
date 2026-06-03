@@ -596,7 +596,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const billede = kort.querySelector(".kontor-billede");
       const navn = kort.querySelector(".kontor-navn").textContent;
       const rolle = kort.querySelector(".kontor-rolle").textContent;
-      const tekster = person.tekst || [`Kort tekst om ${navn} er ikke udfyldt pga tidsmangel`];
+      const tekster = person.tekst || [`Kort tekst om ${navn} er endnu ikke udfyldt`];
 
       modalTitel.textContent = `Om ${navn.split(" ")[0]}`;
       modalNavn.textContent = navn;

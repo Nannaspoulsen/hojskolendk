@@ -19,7 +19,7 @@
 
 .side-laer-os-at-kende .toplinje-punkt .toplinje-ikon,
 .side-laer-os-at-kende .toplinje-hjaelp .toplinje-ikon {
-  color: var(--farve-orange);
+  color: var(--farve-moerk);
 }
 
 .side-laer-os-at-kende .logo {
@@ -102,7 +102,6 @@
 .kontakt-tekst p {
   max-width: 33rem;
   margin-bottom: 0.8rem;
-  color: var(--farve-orange);
   font-size: 1rem;
   line-height: 1.45;
 }
