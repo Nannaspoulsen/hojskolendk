@@ -1,6 +1,6 @@
 /* FORSIDE */
 
-/* GENERELLE SEKTIONER */
+/* Generelle ting */
 
 .snart-ophold,
 .statistik-sektion,
@@ -27,13 +27,14 @@
   text-align: left;
 }
 
-/* HERO */
-
-/* HERO */
+/* Hero */
 
 .hero {
   position: relative;
+
+  /* isolation gør, at z-index kun styrer lagene inde i hero-sektionen. */
   isolation: isolate;
+
   min-height: calc(98vh - 4rem);
   display: flex;
   align-items: center;
@@ -45,6 +46,8 @@
 .hero-video,
 .hero-overlay {
   position: absolute;
+
+  /* inset: 0 får video og overlay til at fylde hele heroen. */
   inset: 0;
 }
 
@@ -53,12 +56,16 @@
   display: block;
   width: 100%;
   height: 100%;
+
+  /* Videoen fylder hele området uden at blive mast. Den beskæres i stedet. */
   object-fit: cover;
 }
 
 .hero-overlay {
   z-index: -1;
-  background: rgba(34, 34, 34, 0.15);
+  background: rgba(34, 34, 34, 0.132);
+
+  /* Overlayet ligger kun visuelt ovenpå videoen og skal ikke blokere klik. */
   pointer-events: none;
 }
 
@@ -77,7 +84,7 @@
   line-height: 1.05;
 }
 
-/* SNART OPHOLD */
+/* Første sektion - ophold som snart går afsted */
 
 .snart-ophold {
   padding-top: 3rem;
@@ -94,7 +101,7 @@
   margin-bottom: var(--afstand-m);
 }
 
-/* STATISTIK */
+/* Statistik */
 
 .statistik-sektion {
   position: relative;
@@ -108,7 +115,7 @@
   inset: 0;
   opacity: 0.18;
 
-  /* Radial gradients laver de bløde organiske mønstre i baggrunden. */
+  /* Radial gradients laver de bløde, organiske mønstre i baggrunden. */
   background-image:
     radial-gradient(
       ellipse at 29% 40%,
@@ -176,13 +183,13 @@
   display: none;
 }
 
-/* OPLEVELSER */
+/* Oplevelser polaroid billeder */
 
 .oplevelse-sektion {
   padding: 4rem 0;
 }
 
-/* OPLEVELSE-SLIDER - MOBIL */
+/* Oplevelse-slider på mobil */
 
 .oplevelse-indhold {
   position: relative;
@@ -194,6 +201,8 @@
   margin-inline: -1rem;
   padding: 1rem;
   overflow-x: auto;
+
+  /* Gør, at kortene snapper pænt på plads, når man swiper på mobil. */
   scroll-snap-type: x mandatory;
 }
 
@@ -208,7 +217,7 @@
   object-fit: cover;
 }
 
-/* Mobil-affordance: orange cirkel med hvid pil, som ligger ovenpå slideren */
+/* Mobil-affordance: cirkel med pil, der viser at slideren kan swipes. */
 
 .oplevelse-indhold::after {
   content: "";
@@ -219,7 +228,7 @@
   width: 2.9rem;
   height: 2.9rem;
   border-radius: 50%;
-  background-color: var(--farve-orange);
+  background-color: var(--farve-hvid);
   box-shadow: var(--skygge);
   pointer-events: none;
   animation: slider-pil-bevaegelse 1.4s ease-in-out infinite;
@@ -233,15 +242,15 @@
   z-index: 6;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: var(--farve-hvid);
+  background-color: var(--farve-orange);
 
-  /* Mask bruger SVG-filen som form, så pilen kan farves hvid med CSS. */
+  /* Mask bruger SVG-filen som form, så pilen kan farves direkte med CSS. */
   mask-image: url("../icons/arrow-right-solid-full.svg");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
 
-  /* Webkit-mask er nødvendig for Safari. */
+  /* Webkit-mask er nødvendig for at få samme effekt i Safari. */
   -webkit-mask-image: url("../icons/arrow-right-solid-full.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -251,20 +260,18 @@
   animation: slider-pil-bevaegelse 1.4s ease-in-out infinite;
 }
 
-/* Pilen bevæger sig diskret mod højre og tilbage igen. */
+/* Animationen får pilen til at bevæge sig lidt mod højre og tilbage igen. */
 
 @keyframes slider-pil-bevaegelse {
-
   0%,
   100% {
     transform: translateX(0);
   }
 
   50% {
-    transform: translateX(0.45rem);
+    transform: translateX(0.95rem);
   }
 }
-
 
 .oplevelse-kort {
   flex: 0 0 16rem;
@@ -272,11 +279,12 @@
   border-radius: var(--radius);
   background: var(--farve-hvid);
 
-  /* Fortæller browseren hvor hvert kort skal være i slideren. */
+  /* Fortæller browseren, hvor hvert kort skal lande i slideren. */
   scroll-snap-align: center;
 }
 
-/* rotate giver polaroid-kortene en skrå placering. */
+/* rotate giver polaroid-kortene en lidt tilfældig/skrå placering. */
+
 .oplevelse-kort:nth-child(1),
 .oplevelse-kort:nth-child(4) {
   rotate: -5deg;
@@ -290,6 +298,7 @@
 .oplevelse-kort:nth-child(3) {
   rotate: 4deg;
 }
+
 .oplevelse-kort:nth-child(6) {
   rotate: 6deg;
 }
@@ -297,7 +306,7 @@
 .oplevelse-billede {
   width: 100%;
 
-  /* aspect-ratio holder billederne kvadratiske uden at give dem fast højde. */
+  /* aspect-ratio holder billederne kvadratiske uden at låse dem til en fast højde. */
   aspect-ratio: 1 / 1;
 
   border-radius: var(--radius);
@@ -312,12 +321,11 @@
   text-align: center;
 }
 
-/* INFOMØDE */
+/* Infomøde */
 
 .infomoede-indhold {
   display: grid;
   gap: var(--afstand-xl);
-  
 }
 
 .infomoede-tekst {
@@ -381,7 +389,7 @@
   width: 0.95rem;
   height: 0.95rem;
 
-  /* Filter bruges til at farve SVG-ikonet orange uden at ændre selve SVG-filen. */
+  /* Filter farver SVG-ikonet orange uden at ændre selve SVG-filen. */
   filter: brightness(0) saturate(100%) invert(36%) sepia(96%) saturate(1931%)
     hue-rotate(17deg) brightness(94%) contrast(99%);
 }
@@ -401,7 +409,7 @@
   top: 50px;
   left: 2%;
 
-  /* transform bruges til at rotere billedet, så billedgruppen får collage-effekt. */
+  /* transform bruges til at rotere billedet. */
   transform: rotate(-10deg);
 }
 
@@ -418,7 +426,7 @@
   width: 85%;
   height: 290px;
 
-  /* translateX(-50%) centrerer billedet præcist ud fra dets egen bredde. */
+  /* translateX(-50%) centrerer billedet ud fra billedets egen bredde. */
   transform: translateX(-50%) rotate(6deg);
 }
 
@@ -430,7 +438,7 @@
   width: 8.75rem;
 }
 
-/* REJSEBREVE */
+/* Rejsebreve */
 
 .rejsebreve-top {
   max-width: 38rem;
@@ -460,6 +468,7 @@
 }
 
 /* Skjuler scrollbar i Chrome, Safari og Edge. */
+
 .rejsebreve-slider::-webkit-scrollbar {
   display: none;
 }
@@ -473,11 +482,89 @@
   background: var(--farve-hvid);
   scroll-snap-align: start;
   cursor: pointer;
+
+  /* Animationen giver kortene lidt bevægelse, så de tydeligere virker klikbare. */
+  animation: rejsebrev-kort-affordance 5.5s ease-in-out infinite;
+}
+
+@keyframes rejsebrev-kort-affordance {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  7% {
+    transform: rotate(-1.5deg);
+  }
+
+  14% {
+    transform: rotate(1.5deg);
+  }
+
+  21% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Forskellig delay gør, at kortene ikke bevæger sig helt samtidig. */
+
+.rejsebrev-kort:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.rejsebrev-kort:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.rejsebrev-kort:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.rejsebrev-kort:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+.rejsebrev-kort::before {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--farve-orange);
+  pointer-events: none;
+}
+
+.rejsebrev-kort::after {
+  content: "";
+  position: absolute;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  z-index: 4;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--farve-hvid);
+
+  /* Mask laver selve pilformen ud fra SVG-ikonet. */
+  mask-image: url("../icons/arrow-right-solid-full.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  pointer-events: none;
 }
 
 .rejsebrev-kort-link {
   position: absolute;
+
+  /* Linket fylder hele kortet, så brugeren kan klikke overalt på kortet. */
   inset: 0;
+
   z-index: 2;
   border-radius: inherit;
 }
@@ -511,11 +598,11 @@
   font-weight: 800;
 }
 
- .rejsebreve-knap {
-   grid-column: 1;
-   grid-row: 1;
-   width: fit-content;
- }
+.rejsebreve-knap {
+  grid-column: 1;
+  grid-row: 1;
+  width: fit-content;
+}
 
 .rejsebreve-bund {
   display: grid;
@@ -562,7 +649,7 @@
   width: 1rem;
 }
 
-/* TRYGHED */
+/* Tryghed */
 
 .tryghed-punkter {
   display: grid;
@@ -612,7 +699,7 @@
   z-index: 2;
   width: 8rem;
 
-  /* translate flytter stemplet ud fra dets egen størrelse, så det ligger ovenpå billederne. */
+  /* translate flytter stemplet, så det ligger ovenpå billederne. */
   transform: translate(20%, -50%);
 }
 
@@ -711,12 +798,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+
+  /* Fjerner standard bullet/pil, så jeg selv kan styre ikonet. */
   list-style: none;
+
   font-weight: 800;
   cursor: pointer;
 }
 
 /* Fjerner browserens standardpil på details/summary i Safari og Chrome. */
+
 .faq-punkt summary::-webkit-details-marker {
   display: none;
 }
@@ -726,7 +817,6 @@
   width: 1rem;
   height: 1rem;
 
-  /* transition gør rotationen af pilen blød, når FAQ-punktet åbnes. */
   transition: transform 0.2s ease;
 }
 
@@ -744,7 +834,7 @@
   margin-top: 2rem;
 }
 
-/* DESKTOP */
+/* Desktop */
 
 @media (min-width: 900px) {
   .hero-titel {
@@ -856,8 +946,10 @@
     color: var(--farve-moerk);
   }
 
+  /* Polaroid-slider */
+
   .oplevelse-sektion {
-    height: 140vh;
+    height: 180vh;
     padding: 0;
 
     /* overflow: clip skjuler indhold uden at skabe ekstra scrollbars. */
@@ -875,10 +967,10 @@
     justify-content: center;
   }
 
-    .oplevelse-indhold::before,
-    .oplevelse-indhold::after {
-      display: none;
-    }
+  .oplevelse-indhold::before,
+  .oplevelse-indhold::after {
+    display: none;
+  }
 
   .oplevelse-overskrift {
     /* min() sikrer, at overskriften følger containeren, men stadig har side-padding. */
@@ -899,16 +991,18 @@
     /* CSS-variablen ændres med JavaScript, så slideren kan bevæge sig ved scroll. */
     transform: translateX(var(--oplevelse-rykning, 0px));
 
-    /* Fortæller browseren, at transform ændrer sig, så animationen bliver mere smooth. */
+    /* Fortæller browseren, at transform ændrer sig, så bevægelsen bliver mere smooth. */
     will-change: transform;
   }
 
   .oplevelse-kort {
-    /* clamp() giver kortene en fleksibel bredde, men holder dem inden for min/max. */
+    /* clamp() giver kortene en fleksibel bredde, men holder dem inden for min og max. */
     flex: 0 0 clamp(22rem, 24vw, 30rem);
 
     padding: 1rem;
   }
+
+  /* Infomøde sektion */
 
   .infomoede-indhold {
     grid-template-columns: 1fr 1fr;
@@ -955,17 +1049,54 @@
     width: 11.5rem;
   }
 
+  /* Rejsebreve */
+
+  /* Har forsøgt denne løsning for at få kortene til at slide helt ud til venstre og det fungerer ved min valgte skærmstørrelse 1440px og mindre... Men bliver skærmstørrelsen større ser det ikke helt rigtigt ud. Har desværre ikke fundet en løsning */
+
+  .rejsebreve-sektion {
+    --rejsebreve-side-luft: max(8rem, calc((100vw - 120rem) / 2 + 2rem));
+  }
+
+  .rejsebreve-slider {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: 0;
+    padding-left: var(--rejsebreve-side-luft);
+    padding-right: var(--rejsebreve-side-luft);
+
+    /* Sørger for, at snap-positionen tager højde for den ekstra luft i siden. */
+    scroll-padding-left: var(--rejsebreve-side-luft);
+  }
+
   .rejsebrev-kort {
     flex-basis: 390px;
     max-width: 390px;
-
-    /* transition gør hover-effekten blød i stedet for brat. */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .rejsebrev-kort:hover {
     transform: translateY(-0.55rem);
     box-shadow: 0 0.2rem 1rem rgba(109, 109, 109, 0.194);
+  }
+
+  .rejsebrev-kort {
+    animation: none;
+  }
+
+  .rejsebrev-kort::before,
+  .rejsebrev-kort::after {
+    display: none;
+  }
+
+  /* Skjuler pilen på cardet, når vi er på desktop. */
+
+  .rejsebrev-kort::before,
+  .rejsebrev-kort::after {
+    display: none;
   }
 
   .rejsebrev-billede {
@@ -982,12 +1113,13 @@
     gap: var(--afstand-s);
   }
 
-
   .rejsebreve-prikker {
     grid-column: 2;
     grid-row: 1 / span 2;
     justify-content: flex-end;
   }
+
+  /* Trygheds sektion */
 
   .tryghed-indhold {
     display: grid;
@@ -1036,6 +1168,8 @@
     transform: translate(-50%, -50%);
   }
 
+  /* FAQ sektion */
+
   .faq-sektion {
     padding-block: 7rem;
   }
@@ -1043,7 +1177,7 @@
   .faq-indhold {
     display: grid;
 
-    /* Første kolonne er fleksibel, anden kolonne holder FAQ-listen i en kontrolleret bredde. */
+    /* Første kolonne er fleksibel, mens anden kolonne holder FAQ-listen i en kontrolleret bredde. */
     grid-template-columns: minmax(0, 1fr) minmax(28rem, 35rem);
 
     align-items: start;

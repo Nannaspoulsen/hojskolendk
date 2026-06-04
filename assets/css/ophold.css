@@ -311,7 +311,6 @@
   height: 1rem;
   background-color: var(--farve-orange);
   mask: url("../icons/check-solid-full.svg") center / contain no-repeat;
-  -webkit-mask: url("../icons/check-solid-full.svg") center / contain no-repeat;
 }
 
 .rejseplan-liste li::before {
@@ -325,7 +324,7 @@
 /* HØJDEPUNKTER */
 
 .hojdepunkter-sektion {
-  padding: 3rem 0 2rem;
+  padding: 3rem 0 1rem;
 }
 
 .hojdepunkter-indhold {
@@ -352,7 +351,7 @@
 .hojdepunkter-liste {
   display: flex;
   /* scroll-snap hjælper kortene med at lande pænt, når brugeren swiper. */
-  gap: 2.4rem;
+  gap: 1.7rem;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   padding: 4.5rem 1rem 1rem;
@@ -375,9 +374,9 @@
 
 .hojdepunkt-billede {
   display: block;
-  width: 8.6rem;
-  height: 8.6rem;
-  padding: 0.28rem;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.2rem;
   border: 0.28rem solid var(--farve-orange);
   border-radius: 50%;
   background: var(--farve-hvid);
@@ -394,15 +393,15 @@
 }
 
 .hojdepunkt-navn {
-  font-size: var(--tekst-normal);
-  font-weight: 500;
+  font-size: var(--tekst-lille);
+  font-weight: 400;
   white-space: nowrap;
 }
 
 /* PRISER OG AFGANGE */
 
 .priser-sektion {
-  padding: 4.5rem 0 5rem;
+  padding: 4.5rem 0 1rem;
   scroll-margin-top: 9rem;
 }
 
@@ -480,7 +479,6 @@
 
 .priser-info .kontakt-ikon {
   justify-self: center;
-  -webkit-mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
   mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
 }
 
@@ -599,7 +597,7 @@
 /* DESTINATIONER */
 
 .destinationer-sektion {
-  padding: 4rem 0 5rem;
+  padding: 2rem 0 2rem;
   scroll-margin-top: 8rem;
 }
 
@@ -610,7 +608,7 @@
 }
 
 .destinationer-label {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
   font-weight: 700;
   font-size: 0.85rem;
 }
@@ -734,7 +732,7 @@ button.destination-top {
 /* PROGRAM */
 
 .program-sektion {
-  padding: 4rem 0 5rem;
+  padding: 2rem 0 2rem;
   scroll-margin-top: 8rem;
 }
 
@@ -834,7 +832,7 @@ button.destination-top {
 /* INKLUDERET */
 
 .inkluderet-sektion {
-  padding: 4.5rem 0 5.5rem;
+  padding: 2rem 0 2rem;
   overflow: hidden;
   scroll-margin-top: 9rem;
 }
@@ -958,7 +956,6 @@ button.destination-top {
   width: 1.2rem;
   height: 1.2rem;
   mask: url("../icons/xmark-solid-full.svg") center / contain no-repeat;
-  -webkit-mask: url("../icons/xmark-solid-full.svg") center / contain no-repeat;
 }
 
 .inkluderet-kontrol {
@@ -974,7 +971,7 @@ button.destination-top {
 /* FAG */
 
 .fag-sektion {
-  padding: 4.5rem 0 5.5rem;
+  padding: 2rem 0 2rem;
   overflow: hidden;
   scroll-margin-top: 9rem;
 }
@@ -1003,7 +1000,7 @@ button.destination-top {
 }
 
 .fag-kort {
-  flex: 0 0 55%;
+  flex: 0 0 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1067,7 +1064,7 @@ button.destination-top {
 /* KONTAKT */
 
 .kontakt-sektion {
-  padding: 4.5rem 0 5.5rem;
+  padding: 2rem 0 5.5rem;
   scroll-margin-top: 9rem;
 }
 
@@ -1119,15 +1116,6 @@ button.destination-top {
   text-decoration: none;
 }
 
-.kontakt-ikon-telefon {
-  mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
-  -webkit-mask: url("../icons/phone-solid-full.svg") center / contain no-repeat;
-}
-
-.kontakt-ikon-mail {
-  mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
-  -webkit-mask: url("../icons/envelope-regular-full.svg") center / contain no-repeat;
-}
 
 .kontakt-person {
   display: none;
@@ -1348,6 +1336,9 @@ button.destination-top {
     background: linear-gradient(to left, var(--farve-baggrund), transparent 15%);
   }
 
+
+  /* HIGHLIGHT SEKTION */
+
   .hojdepunkter-sektion {
     padding: 3rem 0 2rem;
   }
@@ -1370,16 +1361,20 @@ button.destination-top {
   }
 
   .hojdepunkt-boble {
-    min-width: 8.8rem;
+    min-width: 8rem;
   }
 
   .hojdepunkt-billede {
-    width: 8.5rem;
+    width: 8rem;
+      height: 8rem;
   }
 
   .hojdepunkt-navn {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    color: var(--farve-moerk);
   }
+
+  /* PRISER OG AFGANGE */
 
   .priser-sektion {
     padding: 7rem 0;
@@ -1514,6 +1509,9 @@ button.destination-top {
   order: 2;
 }
 
+
+/* DESTINATIONER SEKTION */
+
   .destinationer-sektion {
     padding: 2rem 0 4rem;
     scroll-margin-top: 9rem;
@@ -1576,6 +1574,8 @@ button.destination-top {
   .destination-kort-lukket .destination-navn {
     font-size: 1.1rem;
   }
+
+  /* PROGRAM SEKTION */
 
   .program-sektion {
     padding: 5rem 0 6rem;
@@ -1652,6 +1652,8 @@ button.destination-top {
     font-size: 1.15rem;
   }
 
+  /* INKLUDERET SEKTION */
+
   .inkluderet-sektion {
     /* max og calc giver slideren luft i siderne på store skærme uden at låse layoutet. */
     --inkluderet-side-luft: max(8rem, calc((100vw - 120rem) / 2 + 2rem));
@@ -1720,6 +1722,8 @@ button.destination-top {
     height: 1rem;
   }
 
+  /* FAG SEKTION */
+
   .fag-sektion {
     padding: 4.5rem 0 5rem;
   }
@@ -1772,6 +1776,8 @@ button.destination-top {
   .fag-prikker {
     display: none;
   }
+
+  /* KONTAKT SEKTION */
 
   .kontakt-sektion {
     padding: 5.5rem 0 6rem;
@@ -1840,6 +1846,8 @@ button.destination-top {
   .kontakt-stempel-ikon {
     font-size: 5rem;
   }
+
+  /* ANDRE REJSER */
 
   .andre-rejser-sektion {
     padding: 5.5rem 0 6rem;
