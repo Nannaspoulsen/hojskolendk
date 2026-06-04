@@ -141,7 +141,7 @@
   position: absolute;
   inset: 0;
   background-color: var(--farve-moerk);
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .ophold-hero-indhold {
@@ -160,7 +160,7 @@
   margin-bottom: var(--afstand-m);
   font-size: clamp(1rem, 7vw, 5rem);
   line-height: 1.2;
-  color: var(--farve-baggrund);
+  color: var(--farve-hvid);
 }
 
 .ophold-hero-info {
@@ -471,14 +471,14 @@
   display: inline-block;
   width: 1.7rem;
   height: 1.7rem;
-  background: var(--farve-orange);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-color: var(--farve-orange);
+  flex-shrink: 0;
 }
 
 .priser-info .kontakt-ikon {
   justify-self: center;
+
+  -webkit-mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
   mask: url("../icons/life-ring-solid-full.svg") no-repeat center / contain;
 }
 
@@ -1114,6 +1114,20 @@ button.destination-top {
   font-size: var(--tekst-normal);
   font-weight: 800;
   text-decoration: none;
+}
+
+/* 
+  Ikonerne blev vist som orange firkanter, fordi .kontakt-ikon kun giver størrelse og orange farve. Selve ikonformen kommer fra mask. Masken var kun sat på ikonet i pris-sektionen, så kontaktikonerne manglede deres egne ikonformer. Derfor får telefon og mail hver sin mask her. Måske det kunne løses smartere, men kan ikke gennemskue hvordan.
+*/
+
+.kontakt-links .kontakt-link:nth-child(1) .kontakt-ikon {
+  -webkit-mask: url("../icons/phone-solid-full.svg") no-repeat center / contain;
+  mask: url("../icons/phone-solid-full.svg") no-repeat center / contain;
+}
+
+.kontakt-links .kontakt-link:nth-child(2) .kontakt-ikon {
+  -webkit-mask: url("../icons/envelope-regular-full.svg") no-repeat center / contain;
+  mask: url("../icons/envelope-regular-full.svg") no-repeat center / contain;
 }
 
 
